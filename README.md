@@ -1,6 +1,6 @@
 # 🎸 The Ren Rhapsody - A Fortnite Musical Journey
 
-An interactive web blueprint and UEFN (Unreal Editor for Fortnite) map concept inspired by the music, struggles, and collaborations of [Ren](https://www.renmakesmusic.com). 
+An interactive web blueprint and UEFN (Unreal Editor for Fortnite) map concept inspired by the music and creative work of Ren. Naming an artist or song here does not establish participation, endorsement, ownership, or permission. 
 
 This repository contains the source code for the interactive GitHub Pages site detailing the map's zones, mechanics, and publishing instructions. 
 
