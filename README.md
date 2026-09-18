@@ -48,7 +48,7 @@ The underlying HTML, CSS, JavaScript, and structural design of this website are 
 ### 2. Music, Audio, and Intellectual Property (All Rights Reserved)
 **The music, lyrics, branding, and intellectual property of Ren (Renmakesmusic) are NOT owned by this repository or its creator.** All audio and musical rights belong solely to Ren and his respective labels, collaborators, and publishers.
 
-This project is a **fan-made concept** created for non-commercial, educational, and promotional purposes only. 
+This project is a **fan-made concept/prototype**. Noncommercial intent does not create music permission.
 
 #### Rules for Music Usage in Fortnite/UEFN:
 If you choose to build this map in UEFN and upload Ren's music, you must adhere to the following guidelines:
