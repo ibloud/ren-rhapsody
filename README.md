@@ -16,8 +16,31 @@ This repository contains the source code for the interactive GitHub Pages site d
 1. **Busker’s Alley:** Gritty origins, acoustic loops, and the "Microphone Item."
 2. **Mind’s Theater:** Surreal psychological puzzles based on "Hi Ren" and "Sick Boi."
 3. **Animal Flow:** High-speed neon parkour featuring Chinchilla and Scizzahz.
-4. **The Money Game:** A chaotic casino escape synced to the "Money Game" trilogy.
+4. **The Ledger:** An economic-survival system derived from the Money Game reference without playable wagering.
 5. **The Collaborative Symphony:** A grand finale where rescued NPCs unite on stage.
+
+---
+
+## 🧭 Canonical Conceptual Architecture
+
+The economic architecture is layered rather than parallel:
+
+**Money Game → The Ledger → The Weaver → Duet → 52 Cards of War → Veiled Dominion**
+
+- **Money Game = valuation:** asks what things cost across multiple dimensions of value.
+- **The Ledger = accounting:** records costs, tradeoffs, and consequences as a playable economic-survival system.
+- **The Weaver = negotiation / meaning:** asks who defines, allocates, bears, and inherits value when independent systems meet.
+- **Duet = encounter:** stages the meeting between two systems.
+- **52 Cards of War = systemic play:** expands that encounter into a larger playable world.
+- **Veiled Dominion = sovereignty:** carries the logic into questions of authority and control.
+
+The six Ledger dimensions are **Capital, Information, Reputation, Innovation, Governance, and Labor**. The Weaver does not replace these dimensions; it interrogates who defines them, who bears their costs, and who receives their benefits.
+
+Canonical design rule:
+
+> **Money Game supplies the valuation pressure. The Ledger operationalizes it. The Weaver humanizes and interrogates it. Duet stages the encounter. 52 Cards of War propagates it through play. Veiled Dominion carries it into sovereignty.**
+
+See `docs/CANONICAL-CONCEPTUAL-ARCHITECTURE.md` for the full reconciliation.
 
 ---
 
