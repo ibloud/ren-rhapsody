@@ -71,3 +71,24 @@ Use placeholder or creator-owned audio while testing:
 Replace the placeholder only after the rights record says the exact use is authorized.
 
 **Principle:** The media file is not the rights record.
+
+
+## Economic provenance cross-reference
+
+The Ledger economic system uses the same provenance discipline as the music-rights boundary, but the records answer a different question: **why does this economic parameter exist?**
+
+Economic parameters should preserve, at minimum:
+
+- parameter identifier and definition;
+- exact source and source type;
+- publication/update date and retrieval date;
+- geography and unit;
+- applicable time period;
+- transformation/calibration rule;
+- confidence class and staleness status;
+- fictional-game assumption, when applicable;
+- relationship to the scenario/model rule that consumes it.
+
+A source citation does not establish sponsorship, endorsement, participation, or rights. Likewise, a parameter record does not authorize use of third-party media. Keep **economic evidence**, **music/IP rights**, and **organizational participation** as separate records that may be linked by provenance identifiers.
+
+For the Zone 4 migration, the public-facing mechanic is **The Ledger** rather than a playable casino. The *Money Game* trilogy remains a narrative/artistic reference only unless the applicable music and participation records establish otherwise.
