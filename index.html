@@ -75,6 +75,39 @@
             box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
         }
 
+        /* Orientation + comprehension layer */
+        .site-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 14px;background:rgba(13,17,23,.94);backdrop-filter:blur(12px);border-bottom:1px solid #30363d}
+        .site-nav a{color:#aeb7c2;text-decoration:none;font:700 11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;padding:8px 10px;border-radius:6px}
+        .site-nav a:hover,.site-nav a:focus{color:var(--text-color);background:#161b22;outline:none}
+        .hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+        .hero-actions a{display:inline-block;text-decoration:none;padding:11px 18px;border-radius:7px;font:700 12px var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+        .hero-primary{color:#0d1117;background:var(--accent-cyan)}
+        .hero-secondary{color:var(--text-color);border:1px solid #58616c;background:#161b22}
+        .orientation{margin:0 0 34px;padding:24px;border:1px solid #30363d;border-radius:10px;background:linear-gradient(135deg,rgba(0,242,255,.06),rgba(255,0,255,.04))}
+        .orientation h2{margin-bottom:10px;border:0;padding:0}
+        .orientation h2::before{content:"◎"}
+        .orientation p{max-width:820px;color:#aeb7c2}
+        .orientation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+        .orientation-item{padding:14px;border:1px solid #30363d;background:rgba(13,17,23,.55)}
+        .orientation-item strong{display:block;color:var(--accent-cyan);font:700 12px var(--font-mono);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+        .orientation-item span{color:#8b949e;font-size:.9rem}
+        .rights-banner{margin:0 0 60px;padding:20px 22px;border:1px solid #d29922;border-left:4px solid #d29922;background:rgba(210,153,34,.06);border-radius:8px}
+        .rights-banner h2{font-size:1.25rem;margin-bottom:8px;border:0;padding:0}
+        .rights-banner h2::before{content:"⚖";color:#d29922}
+        .rights-banner p{color:#aeb7c2;max-width:850px}
+        .rights-banner strong{color:#e6edf3}
+        .zone-map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0 30px}
+        .zone-map a{min-height:86px;padding:13px;text-decoration:none;color:#e6edf3;border:1px solid #30363d;background:#161b22;border-radius:8px}
+        .zone-map a:hover{border-color:var(--accent-cyan);transform:translateY(-2px)}
+        .zone-map b{display:block;color:var(--accent-magenta);font:700 11px var(--font-mono);margin-bottom:7px}
+        .zone-map span{display:block;color:#8b949e;font-size:.82rem;line-height:1.35}
+        .status-chip{display:inline-block;margin-top:8px;padding:3px 7px;border:1px solid #d29922;border-radius:99px;color:#d29922;font:700 9px var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+        .section-intro{max-width:800px;color:#aeb7c2;margin-top:-14px;margin-bottom:22px}
+        .collapsible{margin-top:18px;border-top:1px solid #30363d}
+        .collapsible summary{cursor:pointer;padding:14px 0;color:var(--accent-cyan);font:700 11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+        @media(max-width:800px){.orientation-grid{grid-template-columns:1fr}.zone-map{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.site-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.site-nav a{white-space:nowrap}.zone-map{grid-template-columns:1fr}.hero-actions a{width:100%;max-width:280px}}
+
         /* Main Content */
         main {
             max-width: 1000px;
@@ -215,12 +248,43 @@
 <body>
 
     <header>
+        <div class="mission-kicker">FAN-MADE INTERACTIVE CONCEPT · UEFN + WEB</div>
         <h1>The Ren Rhapsody</h1>
-        <p>An Interactive Musical Adventure & Parkour Map built in UEFN. Inspired by the discography, struggles, and collaborations of Ren.</p>
-        <div class="island-code">ISLAND CODE: [TBA]</div>
+        <p>A playable musical journey inspired by Ren’s work — where each zone translates a different relationship between music, movement, story, and value.</p>
+        <div class="hero-actions">
+            <a class="hero-primary" href="#blueprint">Explore the zones ↓</a>
+            <a class="hero-secondary" href="#rights">Understand the rights path</a>
+        </div>
+        <div class="island-code" style="margin-top:20px">ISLAND CODE: [TBA] · CONCEPT / BUILD IN PROGRESS</div>
     </header>
 
+    <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#blueprint">Zones</a>
+        <a href="#rights">Rights</a>
+        <a href="#architecture">Arc</a>
+        <a href="#mechanics">Mechanics</a>
+        <a href="#dev-scope">Build</a>
+        <a href="#funding">Funding</a>
+        <a href="#collaborate">Collaborate</a>
+    </nav>
+
     <main>
+
+        <section class="orientation" aria-labelledby="start-here">
+            <h2 id="start-here">Start here: what is this?</h2>
+            <p>The Ren Rhapsody is being developed as a <strong>prototype first, rights-aware second, public-build third</strong> project. The website explains the creative system; the UEFN island is the eventual playable product.</p>
+            <div class="orientation-grid">
+                <div class="orientation-item"><strong>1 · Experience</strong><span>Move through zones where music, environment and player action are connected.</span></div>
+                <div class="orientation-item"><strong>2 · Evidence</strong><span>Prototype the creative language with cleared, original or placeholder material while rights are unresolved.</span></div>
+                <div class="orientation-item"><strong>3 · Expansion</strong><span>Integrate artist-specific material only when the applicable permission and platform requirements are established.</span></div>
+            </div>
+        </section>
+
+        <section class="rights-banner" id="rights" aria-labelledby="rights-title">
+            <h2 id="rights-title">Rights reality is part of the design</h2>
+            <p><strong>Creation rule:</strong> build from what is verifiable, not from what is assumed. Artist-specific recordings, music videos, likenesses, collaborations and branding are treated as <strong>rights-dependent</strong> unless their use is documented. That lets the creative prototype move forward without representing an unconfirmed relationship as approval.</p>
+            <span class="status-chip">Current state · rights confirmation required for artist-specific public use</span>
+        </section>
 
         <section class="mission-control" id="play-submission" aria-labelledby="play-title">
             <div class="mission-kicker">Play Submission / Mission Control</div>
@@ -263,31 +327,38 @@
         <!-- The Map Blueprint -->
         <section id="blueprint">
             <h2>The Map Blueprint</h2>
-            <p>Players spawn in a monochrome world. Collecting "Beat Fragments" unlocks Ren's music, dynamically changing the environment, adding color, and triggering platforming challenges synced to the beat.</p>
+            <p class="section-intro">Five zones form a progression from origin and perception to rhythm, economic pressure, and collective release. The map is the experience layer; this page is the explanation layer.</p>
+            <div class="zone-map" aria-label="Zone navigation">
+                <a href="#zone-1"><b>01 · BUSKER’S ALLEY</b><span>Origin / traversal</span></a>
+                <a href="#zone-2"><b>02 · MIND’S THEATER</b><span>Perception / puzzle</span></a>
+                <a href="#zone-3"><b>03 · ANIMAL FLOW</b><span>Rhythm / movement</span></a>
+                <a href="#zone-4"><b>04 · THE LEDGER</b><span>Value / consequence</span></a>
+                <a href="#zone-5"><b>05 · SYMPHONY</b><span>Collective / release</span></a>
+            </div>
             
             <div class="zone-grid" style="margin-top: 30px;">
-                <div class="card">
+                <div class="card" id="zone-1">
                     <h3>Zone 1: Busker’s Alley</h3>
                     <div class="vibe">Gritty, urban, dimly lit. Brighton origins.</div>
-                    <p><strong>Music:</strong> "Old Boy", "Patricia's Manifesto"</p>
+                    <p><strong>Music reference:</strong> "Old Boy", "Patricia's Manifesto"</p><span class="status-chip">Rights-dependent</span>
                     <p><strong>Collab:</strong> Ruby Duff NPC grants the "Microphone Item" to shatter glass barriers.</p>
                 </div>
 
-                <div class="card">
+                <div class="card" id="zone-2">
                     <h3>Zone 2: Mind’s Theater</h3>
                     <div class="vibe">Surreal, psychological, theatrical.</div>
-                    <p><strong>Music:</strong> "Hi Ren", "Sick Boi"</p>
+                    <p><strong>Music reference:</strong> "Hi Ren", "Sick Boi"</p><span class="status-chip">Rights-dependent</span>
                     <p><strong>Collab:</strong> Find floating masks representing vocal stems to solve puzzles and escape closing walls.</p>
                 </div>
 
-                <div class="card">
+                <div class="card" id="zone-3">
                     <h3>Zone 3: Animal Flow</h3>
                     <div class="vibe">Neon, jungle, fast-paced.</div>
-                    <p><strong>Music:</strong> "Animal Flow", "Illest of Our Time"</p>
+                    <p><strong>Music reference:</strong> "Animal Flow", "Illest of Our Time"</p><span class="status-chip">Rights-dependent</span>
                     <p><strong>Collab:</strong> Chinchilla & Scizzahz NPCs offer a rhythm mini-game to unlock the grapple bow.</p>
                 </div>
 
-                <div class="card">
+                <div class="card" id="zone-4">
                     <h3>Zone 4: The Ledger</h3>
                     <div class="vibe">A high-pressure economic survival district.</div>
                     <p><strong>Music reference:</strong> "Money Game" (Pts 1-3), subject to rights confirmation.</p>
@@ -295,10 +366,10 @@
                     <p><strong>Narrative:</strong> Mega Ran & Cassey D NPCs are part of the district's story. The player navigates the system rather than gambling against it.</p>
                 </div>
 
-                <div class="card">
+                <div class="card" id="zone-5">
                     <h3>Zone 5: Symphony</h3>
                     <div class="vibe">Floating amphitheater in space.</div>
-                    <p><strong>Music:</strong> "The Hunger", "Road Runner", "Blue"</p>
+                    <p><strong>Music reference:</strong> "The Hunger", "Road Runner", "Blue"</p><span class="status-chip">Rights-dependent</span>
                     <p><strong>Collab:</strong> Every saved NPC appears on stage. Conduct the orchestra to ascend a staircase of musical notes.</p>
                 </div>
             </div>
@@ -307,6 +378,7 @@
         <!-- Canonical Architecture -->
         <section id="architecture">
             <h2>Canonical Architecture</h2>
+            <details class="collapsible"><summary>Show detailed production assumptions</summary>
             <div class="card" style="border-color: var(--accent-magenta); background: rgba(255, 0, 255, 0.05);">
                 <h3 style="color: var(--accent-magenta);">From Valuation to Sovereignty</h3>
                 <p><strong>Money Game → The Ledger → The Weaver → Duet → 52 Cards of War → Veiled Dominion</strong></p>
@@ -385,6 +457,7 @@
                 <p>If 150 hours sounds too daunting, you can build a stripped-down MVP version in about <strong>20 to 30 hours</strong>. </p>
                 <p style="margin-top: 10px;">To do this: Remove the custom audio-reactive materials, remove the rhythm mini-games, and skip the complex Verse coding. Keep it strictly as a linear parkour map where players walk through the 5 zones, and the music simply changes as they enter each new area. This allows a beginner to build and publish it in a single weekend.</p>
             </div>
+            </details>
         </section>
 
         <!-- Career Retraining Section -->
@@ -435,7 +508,7 @@
         <!-- Project Cost & Funding Section -->
         <section id="funding">
             <h2>Project Cost & Funding</h2>
-            <p>One of the best parts about building in UEFN is that the barrier to entry is financially $0. However, time is your biggest investment. Here is a realistic look at the costs and how to potentially fund the project.</p>
+            <p class="section-intro">Separate <strong>project cost</strong> from <strong>possible revenue</strong>. Neither Epic support nor music clearance should be treated as assumed funding. The public-build path depends on the actual rights and platform conditions in force when the island is released.</p>
             
             <div class="zone-grid" style="margin-top: 30px;">
                 <div class="card">
@@ -450,7 +523,7 @@
                 </div>
                 <div class="card">
                     <h3>🎮 Epic Games Island Funds</h3>
-                    <p><strong>Warning:</strong> Because this uses copyrighted music, you cannot legally monetize the map via Epic's payout system without a commercial license. Build it for the portfolio first, monetize your skills second.</p>
+                    <p><strong>Rights gate:</strong> Copyright and platform eligibility need to be resolved for the exact music and uses before treating a public build as monetizable. Prototype with cleared/original/placeholder audio while that question remains open.</p>
                 </div>
                 <div class="card">
                     <h3>🤝 Official Partnership</h3>
@@ -461,6 +534,10 @@
 
         <!-- Philosophy & Ethics Section -->
         <section id="philosophy">
+            <div class="rights-banner" style="margin-bottom:30px;border-left-color:var(--accent-cyan);border-color:#30363d;background:rgba(0,242,255,.035)">
+                <h2>How to read the project</h2>
+                <p><strong>Concept</strong> describes the intended experience. <strong>Reference</strong> describes artistic inspiration. <strong>Rights-dependent</strong> means public use is conditional. <strong>Cleared</strong> should only appear when the project has documentation supporting the specific use.</p>
+            </div>
             <h2>Philosophy & Ethics (Respecting Ren)</h2>
             <p>Ren’s music is deeply tied to his struggles with the music industry, capitalism, and mental health. Building a map based on his art requires navigating specific ethical boundaries to ensure we honor his philosophy, not exploit it.</p>
             
@@ -492,6 +569,7 @@
 
         <!-- Publishing Instructions -->
         <section id="publishing">
+            <p class="section-intro">The publishing sequence below assumes the creative prototype has been tested and the exact public-use assets have been reviewed. Publishing is a later gate, not evidence that rights are already cleared.</p>
             <h2>How to Make It Playable</h2>
             <ol class="steps">
                 <li>
