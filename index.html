@@ -210,6 +210,21 @@
         .platform-roadmap{margin:0 0 60px;padding:26px;border:1px solid var(--accent-cyan);background:rgba(0,242,255,.025)}
         .platform-roadmap h2{margin-bottom:10px}.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.platform-card{border:1px solid #30363d;padding:16px;background:rgba(13,17,23,.55)}.platform-card h3{font:700 12px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-cyan)}.platform-card p,.platform-card li{color:#8b949e;font-size:.86rem;line-height:1.6}.platform-card ol{padding-left:20px;margin-top:10px}.portfolio-lane{margin-top:12px;padding:13px;border-left:2px solid var(--accent-magenta);color:#aeb7c2;font-size:.86rem;line-height:1.6}
         @media(max-width:700px){.platform-grid{grid-template-columns:1fr}}
+        /* Atmosphere / Ren ecosystem */
+        .atmosphere{margin:0 0 60px;padding:28px;border:1px solid var(--accent-magenta);background:radial-gradient(circle at 85% 15%,rgba(255,0,255,.08),transparent 35%),rgba(22,27,34,.72)}
+        .atmosphere-lead{max-width:780px;color:#aeb7c2;margin-bottom:22px}
+        .atmosphere-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+        .atmosphere-card{display:flex;flex-direction:column;min-height:210px;border:1px solid #30363d;background:rgba(13,17,23,.72);padding:20px;transition:transform .25s ease,border-color .25s ease}
+        .atmosphere-card:hover{transform:translateY(-3px);border-color:var(--accent-cyan)}
+        .atmosphere-card h3{font:700 12px var(--font-mono);letter-spacing:.11em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:9px}
+        .atmosphere-card p{color:#aeb7c2;font-size:.9rem;line-height:1.6;margin-bottom:10px}
+        .atmosphere-card .status{font:700 10px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:#8b949e;margin-bottom:10px}
+        .atmosphere-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+        .atmosphere-actions a{display:inline-block;padding:8px 11px;border:1px solid #30363d;color:var(--accent-cyan);font:700 10px var(--font-mono);text-decoration:none;text-transform:uppercase;letter-spacing:.07em}
+        .atmosphere-actions a:hover{border-color:var(--accent-cyan);text-decoration:none}
+        .atmosphere-note{margin-top:16px;padding:13px;border-left:2px solid var(--accent-magenta);color:#8b949e;font-size:.84rem;line-height:1.55}
+        @media(max-width:700px){.atmosphere-grid{grid-template-columns:1fr}.atmosphere{padding:20px}}
+
     </style>
 </head>
 <body>
@@ -359,7 +374,53 @@
             </div>
         </section>
 
-        <!-- Canonical Architecture -->
+
+        <!-- Atmosphere / related Ren builds -->
+        <section class="atmosphere" id="atmosphere" aria-labelledby="atmosphere-title">
+            <div class="mission-kicker">The Atmosphere / Explore + Build</div>
+            <h2 id="atmosphere-title">YOU FOUND ONE WORLD. THERE ARE OTHERS.</h2>
+            <p class="atmosphere-lead">The Ren Rhapsody is one node in a larger fan-built constellation. Explore the playable experiments, inspect the repositories, follow the research, or join the build. PIXIE is the navigation layer for discovering where to go next.</p>
+            <div class="atmosphere-grid">
+                <article class="atmosphere-card">
+                    <div class="status">This project · 1–4 player UEFN concept</div>
+                    <h3>REN RHAPSODY</h3>
+                    <p>The main playable destination: a musical adventure / parkour map concept moving toward a real UEFN submission candidate.</p>
+                    <div class="atmosphere-actions"><a href="https://github.com/ibloud/ren-rhapsody" target="_blank" rel="noopener">Inspect repo</a><a href="#collaborate">Join the build</a></div>
+                </article>
+                <article class="atmosphere-card">
+                    <div class="status">Playable prototype · Rhythm game</div>
+                    <h3>REN TAP TAP REVENGE</h3>
+                    <p>A three-lane rhythm prototype with taps, holds, swipes, combo scoring, and a path toward authorized audio/charting work.</p>
+                    <div class="atmosphere-actions"><a href="https://github.com/ibloud/ren-tap-tap-revenge" target="_blank" rel="noopener">Get the code</a><a href="https://github.com/ibloud/ren-tap-tap-revenge/fork" target="_blank" rel="noopener">Fork / build</a></div>
+                </article>
+                <article class="atmosphere-card">
+                    <div class="status">Playable chart project · Ren × Chris Webby</div>
+                    <h3>TARANTULA / CLONE HERO</h3>
+                    <p>A community-focused custom-chart project for “Tarantula,” with chart templates and a documented toolchain for people who want to inspect or extend the work.</p>
+                    <div class="atmosphere-actions"><a href="https://github.com/ibloud/tarantula-clone-hero" target="_blank" rel="noopener">Inspect repo</a><a href="https://github.com/ibloud/tarantula-clone-hero/fork" target="_blank" rel="noopener">Fork / build</a></div>
+                </article>
+                <article class="atmosphere-card">
+                    <div class="status">Playable prototype · Text adventure</div>
+                    <h3>LIVING ROOM POETRY</h3>
+                    <p>A lightweight interactive text-adventure prototype built around the cadence and themes of “Living Room Poetry.” The engine is intentionally easy to inspect and self-host.</p>
+                    <div class="atmosphere-actions"><a href="https://github.com/ibloud/living-room-poetry" target="_blank" rel="noopener">Inspect repo</a><a href="https://github.com/ibloud/living-room-poetry/fork" target="_blank" rel="noopener">Fork / build</a></div>
+                </article>
+                <article class="atmosphere-card">
+                    <div class="status">Research + ecosystem record · PIXIE lives here</div>
+                    <h3>50 WAYS TO LEAVE ANOTHER</h3>
+                    <p>The broader music-first development record connecting the narrative work, provenance, rights research, AT Protocol experiments, and the PIXIE discovery prototype.</p>
+                    <div class="atmosphere-actions"><a href="https://ibloud.github.io/50-ways-to-leave-another/pixie/demo/index.html" target="_blank" rel="noopener">Enter PIXIE</a><a href="https://github.com/ibloud/50-ways-to-leave-another" target="_blank" rel="noopener">Explore repo</a></div>
+                </article>
+                <article class="atmosphere-card">
+                    <div class="status">Network layer · Private / consent-oriented communication</div>
+                    <h3>MADE SICK / GERM</h3>
+                    <p>Continue beyond the public Discord layer through the Germ handoff, then use the network to find people and conversations connected to the wider ecosystem.</p>
+                    <div class="atmosphere-actions"><a href="https://landing.ger.mx/newUser/web/#did:plc:o6kuv3yieti2vqrb7ckmd5vg+did:plc:b5uem672ci23lqrcz6j6bs2c" target="_blank" rel="noopener">Open Germ handoff</a><a href="https://github.com/ibloud/made-sick" target="_blank" rel="noopener">Explore build</a></div>
+                </article>
+            </div>
+            <div class="atmosphere-note"><strong>BUILD WITH US:</strong> These are not presented as official Ren projects or endorsements. They are fan-made / experimental builds with their own rights and participation boundaries. If you want to contribute, start with the repository, read its README and rights notes, then fork, test, open an issue, or submit a pull request where the project permits it.</div>
+        </section>
+\n        <!-- Canonical Architecture -->
         <section id="architecture">
             <h2>Canonical Architecture</h2>
             <div class="card" style="border-color: var(--accent-magenta); background: rgba(255, 0, 255, 0.05);">
