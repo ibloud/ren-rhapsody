@@ -206,6 +206,10 @@
         .mission-gate input{width:18px;height:18px;margin-top:2px;accent-color:var(--accent-cyan)}.mission-gate b{display:block;color:var(--text-color);font-size:.9rem}.mission-gate small{display:block;color:#8b949e;line-height:1.4;margin-top:2px}
         .mission-note{margin-top:18px;padding:12px;border-left:2px solid var(--accent-cyan);color:#8b949e;font-size:.86rem}.mission-ready{font:700 12px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-cyan);margin-top:14px}
         @media(max-width:700px){.mission-grid{grid-template-columns:repeat(2,1fr)}.mission-gates{grid-template-columns:1fr}.mission-control{padding:20px}}
+    
+        .platform-roadmap{margin:0 0 60px;padding:26px;border:1px solid var(--accent-cyan);background:rgba(0,242,255,.025)}
+        .platform-roadmap h2{margin-bottom:10px}.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.platform-card{border:1px solid #30363d;padding:16px;background:rgba(13,17,23,.55)}.platform-card h3{font:700 12px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-cyan)}.platform-card p,.platform-card li{color:#8b949e;font-size:.86rem;line-height:1.6}.platform-card ol{padding-left:20px;margin-top:10px}.portfolio-lane{margin-top:12px;padding:13px;border-left:2px solid var(--accent-magenta);color:#aeb7c2;font-size:.86rem;line-height:1.6}
+        @media(max-width:700px){.platform-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -243,6 +247,17 @@
             </div>
             <div class="mission-ready" id="play-ready">NOT READY — BUILD THE PLAYABLE.</div>
             <div class="mission-note"><strong>Important:</strong> this dashboard tracks project readiness. It does not claim Epic/Fortnite approval, a submission deadline, or rights clearance. The current project itself identifies artist-specific references and exact recordings as subject to participation/rights confirmation.</div>
+        </section>
+
+
+        <section class="platform-roadmap" id="platform-publishing">
+            <h2>From Play Submission to Platform Publication</h2>
+            <p>The October 31 target is the project finish line. From there, this map has a concrete Epic path and a separate Xbox path — with the current UEFN build remaining the primary Epic candidate.</p>
+            <div class="platform-grid">
+                <div class="platform-card"><h3>Epic Games / Fortnite — primary</h3><ol><li>Complete the 10 Play Submission gates above.</li><li>Resolve rights/attribution and use cleared or approved audio for the public island.</li><li>Build and test the island in UEFN, then publish through Epic's Creator Portal workflow.</li><li>Pass Epic moderation and release the approved island; capture the Island Code and player-facing metadata.</li></ol><p style="margin-top:10px">The website is the design/evidence layer; the actual publishable product is the UEFN island.</p></div>
+                <div class="platform-card"><h3>Xbox — adaptation path</h3><ol><li>Use the finished playable experience and evidence package as the concept/prototype foundation.</li><li>Prepare an Xbox-native build rather than treating a Fortnite island or GitHub site as the Xbox product.</li><li>Enter the Xbox creator/Partner Center process, complete required agreements and product setup, then build against the applicable Xbox/GDK workflow.</li><li>Submit the product for certification and, if approved, configure its Xbox release.</li></ol><p style="margin-top:10px">This is a future port/publishing route, not a claim that Epic/Fortnite publication automatically grants Xbox publication.</p></div>
+            </div>
+            <div class="portfolio-lane"><strong>UNEMPLOYMENT → EXPERIENCE RECEIPTS:</strong> every completed stage can produce evidence for a portfolio: UEFN/Verse work, level-design iterations, accessibility findings, rights/attribution research, QA test cases, bug reports, playtest analysis, release metadata, publishing workflow notes, gameplay capture, and a postmortem.</div>
         </section>
 
         <!-- The Map Blueprint -->
