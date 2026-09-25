@@ -189,6 +189,27 @@
             header h1 { font-size: 2.5rem; }
             .island-code { font-size: 1.2rem; padding: 10px 20px; }
         }
+    
+        /* Play submission mission control */
+        .mission-control{margin:0 0 60px;padding:28px;border:1px solid var(--accent-magenta);background:linear-gradient(135deg,rgba(255,0,255,.08),rgba(0,242,255,.04));box-shadow:0 0 30px rgba(255,0,255,.08)}
+        .mission-kicker{font:700 11px var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:8px}
+        .mission-control h2{margin-bottom:10px}
+        .mission-control h2::before{content:"▶"}
+        .mission-lead{max-width:760px;color:#aeb7c2;margin-bottom:22px}
+        .mission-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0 24px}
+        .mission-stat{padding:14px;border:1px solid #30363d;background:rgba(13,17,23,.7);text-align:center}
+        .mission-stat strong{display:block;font:700 1.5rem var(--font-mono);color:var(--text-color)}
+        .mission-stat span{font:10px var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:#8b949e}
+        .mission-bar{height:8px;background:#080b0f;border:1px solid #30363d;margin:8px 0 20px}.mission-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-magenta),var(--accent-cyan));transition:width .3s}
+        .mission-gates{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+        .mission-gate{display:grid;grid-template-columns:25px 1fr;gap:9px;padding:12px;border:1px solid #30363d;background:rgba(13,17,23,.65)}
+        .mission-gate input{width:18px;height:18px;margin-top:2px;accent-color:var(--accent-cyan)}.mission-gate b{display:block;color:var(--text-color);font-size:.9rem}.mission-gate small{display:block;color:#8b949e;line-height:1.4;margin-top:2px}
+        .mission-note{margin-top:18px;padding:12px;border-left:2px solid var(--accent-cyan);color:#8b949e;font-size:.86rem}.mission-ready{font:700 12px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-cyan);margin-top:14px}
+        @media(max-width:700px){.mission-grid{grid-template-columns:repeat(2,1fr)}.mission-gates{grid-template-columns:1fr}.mission-control{padding:20px}}
+    
+        .platform-roadmap{margin:0 0 60px;padding:26px;border:1px solid var(--accent-cyan);background:rgba(0,242,255,.025)}
+        .platform-roadmap h2{margin-bottom:10px}.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.platform-card{border:1px solid #30363d;padding:16px;background:rgba(13,17,23,.55)}.platform-card h3{font:700 12px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-cyan)}.platform-card p,.platform-card li{color:#8b949e;font-size:.86rem;line-height:1.6}.platform-card ol{padding-left:20px;margin-top:10px}.portfolio-lane{margin-top:12px;padding:13px;border-left:2px solid var(--accent-magenta);color:#aeb7c2;font-size:.86rem;line-height:1.6}
+        @media(max-width:700px){.platform-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -200,6 +221,45 @@
     </header>
 
     <main>
+
+        <section class="mission-control" id="play-submission" aria-labelledby="play-title">
+            <div class="mission-kicker">Play Submission / Mission Control</div>
+            <h2 id="play-title">MAKE IT PLAYABLE. MAKE IT SUBMITTABLE.</h2>
+            <p class="mission-lead">The Ren Rhapsody gets a different finish line from DUET: completion is tied to having a real, playable UEFN island ready for submission/public release, with the evidence needed to prove the experience works. The target is Halloween 2026 — October 31 — but the gate is <strong>PLAY SUBMISSION READY</strong>, not a fictional platform deadline.</p>
+            <div class="mission-grid" aria-label="Play submission milestones">
+                <div class="mission-stat"><strong id="play-days">—</strong><span>Days to target</span></div>
+                <div class="mission-stat"><strong id="play-percent">0%</strong><span>Submission readiness</span></div>
+                <div class="mission-stat"><strong id="play-done">0/10</strong><span>Gates complete</span></div>
+                <div class="mission-stat"><strong>10.31.26</strong><span>Target</span></div>
+            </div>
+            <div class="mission-bar" aria-label="Play submission readiness"><span id="play-bar"></span></div>
+            <div class="mission-gates" id="play-gates">
+                <label class="mission-gate"><input type="checkbox" data-play-gate="core"><span><b>CORE LOOP WORKS</b><small>Beat Fragments, traversal, zones, progression and the central experience function.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="audio"><span><b>AUDIO PATH CLEARED</b><small>Prototype audio is clearly separated from any public build requiring rights confirmation.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="verse"><span><b>VERSE / DEVICES</b><small>NPCs, puzzles, triggers and interactive systems are working in UEFN.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="playtest"><span><b>PRIVATE PLAYTEST</b><small>Real players have completed the island and supplied actionable feedback.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="polish"><span><b>POLISH PASS</b><small>Critical blockers, unfair traversal, broken triggers and obvious rough edges are addressed.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="rights"><span><b>RIGHTS / ATTRIBUTION REVIEW</b><small>Music, artist references, collaborations and public-use materials are documented and handled appropriately.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="thumbnail"><span><b>DISCOVERY PACKAGE</b><small>Island title, description, thumbnail, tags and gameplay media are ready.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="publish"><span><b>UEFN PUBLISH</b><small>The island successfully compiles/publishes through the Epic workflow and has a real release state.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="code"><span><b>ISLAND CODE</b><small>The actual island code is captured here and verified by an independent player.</small></span></label>
+                <label class="mission-gate"><input type="checkbox" data-play-gate="evidence"><span><b>SUBMISSION EVIDENCE</b><small>Playable build, screenshots/video, design summary, test results and rights notes are assembled.</small></span></label>
+            </div>
+            <div class="mission-ready" id="play-ready">NOT READY — BUILD THE PLAYABLE.</div>
+            <div class="mission-note"><strong>Important:</strong> this dashboard tracks project readiness. It does not claim Epic/Fortnite approval, a submission deadline, or rights clearance. The current project itself identifies artist-specific references and exact recordings as subject to participation/rights confirmation.</div>
+        </section>
+
+
+        <section class="platform-roadmap" id="platform-publishing">
+            <h2>From Play Submission to Platform Publication</h2>
+            <p>The October 31 target is the project finish line. From there, this map has a concrete Epic path and a separate Xbox path — with the current UEFN build remaining the primary Epic candidate.</p>
+            <div class="platform-grid">
+                <div class="platform-card"><h3>Epic Games / Fortnite — primary</h3><ol><li>Complete the 10 Play Submission gates above.</li><li>Resolve rights/attribution and use cleared or approved audio for the public island.</li><li>Build and test the island in UEFN, then publish through Epic's Creator Portal workflow.</li><li>Pass Epic moderation and release the approved island; capture the Island Code and player-facing metadata.</li></ol><p style="margin-top:10px">The website is the design/evidence layer; the actual publishable product is the UEFN island.</p></div>
+                <div class="platform-card"><h3>Xbox — adaptation path</h3><ol><li>Use the finished playable experience and evidence package as the concept/prototype foundation.</li><li>Prepare an Xbox-native build rather than treating a Fortnite island or GitHub site as the Xbox product.</li><li>Enter the Xbox creator/Partner Center process, complete required agreements and product setup, then build against the applicable Xbox/GDK workflow.</li><li>Submit the product for certification and, if approved, configure its Xbox release.</li></ol><p style="margin-top:10px">This is a future port/publishing route, not a claim that Epic/Fortnite publication automatically grants Xbox publication.</p></div>
+            </div>
+            <div class="portfolio-lane"><strong>UNEMPLOYMENT → EXPERIENCE RECEIPTS:</strong> every completed stage can produce evidence for a portfolio: UEFN/Verse work, level-design iterations, accessibility findings, rights/attribution research, QA test cases, bug reports, playtest analysis, release metadata, publishing workflow notes, gameplay capture, and a postmortem.</div>
+        </section>
+
         <!-- The Map Blueprint -->
         <section id="blueprint">
             <h2>The Map Blueprint</h2>
@@ -480,6 +540,19 @@
     <footer>
         <p>A fan-made concept dedicated to Ren. Support the official artist at <a href="https://renmakesmusic.com" target="_blank">renmakesmusic.com</a></p>
     </footer>
+
+
+<script>
+(() => {
+ const target=new Date('2026-10-31T23:59:59-05:00'), key='renRhapsodyPlayReadinessV1';
+ const gates=[...document.querySelectorAll('[data-play-gate]')]; let state={};
+ try{state=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+ function render(){const done=gates.filter(x=>state[x.dataset.playGate]).length,p=Math.round(done/gates.length*100);document.getElementById('play-percent').textContent=p+'%';document.getElementById('play-done').textContent=done+'/'+gates.length;document.getElementById('play-bar').style.width=p+'%';document.getElementById('play-ready').textContent=p===100?'PLAY SUBMISSION READY — VERIFY THE BUILD AND SUBMIT.':'NOT READY — '+(gates.length-done)+' GATES REMAIN.';gates.forEach(x=>x.checked=!!state[x.dataset.playGate]);}
+ gates.forEach(x=>x.addEventListener('change',()=>{state[x.dataset.playGate]=x.checked;try{localStorage.setItem(key,JSON.stringify(state))}catch(e){}render()}));
+ function tick(){const s=Math.max(0,Math.floor((target-Date.now())/1000));document.getElementById('play-days').textContent=Math.floor(s/86400);}
+ tick();setInterval(tick,1000);render();
+})();
+</script>
 
 </body>
 </html>
