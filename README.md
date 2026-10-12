@@ -19,6 +19,14 @@ This repository contains the source code for the interactive GitHub Pages site d
 
 ---
 
+## Halloween 2026: First Movement
+
+**October 31 remains our internal target for a tested public prototype and community playtest.** Deliver one short experience, one music-and-movement mechanic, original or cleared placeholder audio, a tested iPad/browser route from Break This Build, and gameplay/test evidence. The existing website remains a blueprint; the playable preview still needs implementation and independent validation.
+
+The browser preview is the default path. A one-zone UEFN prototype is conditional on confirmed development access and a working build by October 17. Full Fortnite publication, the five-zone production build and Xbox adaptation follow later evidence and approval gates.
+
+See [scope, dated checkpoints, responsibilities and release acceptance](docs/HALLOWEEN-2026-FIRST-MOVEMENT.md). A failed playable gate means a clearly labeled development showcase on October 31, with the missed target recorded.
+
 ## 🗺️ Project Overview
 
 **The Ren Rhapsody** is a concept for a 1-4 player Musical Adventure/Parkour map in Fortnite Creative. Players spawn in a monochrome world and must progress through zones representing different eras of Ren's music. As they collect "Beat Fragments," the music dynamically unlocks, changing the environment and triggering beat-synced platforming challenges.
