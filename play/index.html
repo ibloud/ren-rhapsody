@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="First Movement — an original, rights-aware browser music-and-movement prototype.">
+  <title>First Movement — Ren Rhapsody Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="../" aria-label="Ren Rhapsody home"><span class="mark">R</span><span>REN RHAPSODY <i>/ FIRST MOVEMENT</i></span></a>
+      <div class="top-actions"><span class="build-tag"><span class="live-dot"></span> BROWSER PROTOTYPE · 01</span><button id="soundToggle" class="icon-button" type="button" aria-label="Toggle sound" title="Toggle sound">♫ <span id="soundLabel">SOUND ON</span></button></div>
+    </header>
+
+    <section class="game-frame" aria-label="Playable rhythm platform game">
+      <div class="canvas-wrap">
+        <canvas id="game" aria-label="Game area. Use the arrow keys or A and D to move, and Space, W, or Up to jump. On touch screens, use the on-screen controls."></canvas>
+        <div class="top-hud" aria-live="polite">
+          <div class="objective"><span class="eyebrow">YOUR NEXT MOVE</span><strong id="objective">Reach the last light.</strong><span id="hint">Move with ← → or A / D · jump with Space</span></div>
+          <div class="collect-counter"><span class="eyebrow">BEAT FRAGMENTS</span><strong><span id="collected">0</span><b>/</b>5</strong></div>
+        </div>
+        <div id="beatPulse" class="beat-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="beat-label"><span class="beat-dot"></span><span id="beatText">WAITING FOR YOUR DOWNBEAT</span></div>
+        <div id="overlay" class="overlay">
+          <div class="intro-card">
+            <div class="intro-kicker"><span>AN ORIGINAL BROWSER EXPERIMENT</span><span>01 / 01</span></div>
+            <div class="cover-art" aria-hidden="true"><div class="moon"></div><div class="cover-ridge ridge-back"></div><div class="cover-ridge ridge-front"></div><div class="cover-player">✦</div><div class="cover-note n1">♪</div><div class="cover-note n2">♫</div></div>
+            <p class="eyebrow">A SHORT PLAYABLE PROTOTYPE</p>
+            <h1>Find your<br><em>own rhythm.</em></h1>
+            <p class="intro-copy">The city has lost its pulse. Move between the rooftops, catch the downbeat, and bring five fragments of light to the final stage.</p>
+            <div class="howto"><span><kbd>←</kbd><kbd>→</kbd><small>MOVE</small></span><span><kbd>SPACE</kbd><small>JUMP · HIT THE BEAT</small></span><span><b class="touch-icon">◉</b><small>TOUCH READY</small></span></div>
+            <button id="startButton" class="primary-button" type="button">STEP INTO THE NIGHT <span>↗</span></button>
+            <p class="rights-note">Original synthesized tones only. No artist recordings or licensed music are used in this prototype.</p>
+          </div>
+        </div>
+        <div id="endOverlay" class="overlay hidden">
+          <div class="end-card">
+            <div id="endGlyph" class="end-glyph">✦</div><p id="endEyebrow" class="eyebrow">THE CITY REMEMBERS</p><h2 id="endTitle">The light travels.</h2>
+            <p id="endCopy" class="intro-copy">You found your way through the silence.</p>
+            <div class="run-stats"><div><span class="eyebrow">FRAGMENTS</span><strong id="endFragments">0 / 5</strong></div><div><span class="eyebrow">ON-BEAT JUMPS</span><strong id="endBeats">0</strong></div><div><span class="eyebrow">TIME</span><strong id="endTime">0:00</strong></div></div>
+            <button id="restartButton" class="primary-button" type="button">PLAY AGAIN <span>↻</span></button>
+            <a class="home-link" href="../">Back to the project blueprint</a>
+          </div>
+        </div>
+        <div id="touchControls" class="touch-controls" aria-label="Touch game controls">
+          <div class="move-controls"><button data-control="left" aria-label="Move left">←</button><button data-control="right" aria-label="Move right">→</button></div>
+          <button class="jump-control" data-control="jump" aria-label="Jump on the beat"><span>JUMP</span><i>⤒</i></button>
+        </div>
+      </div>
+      <footer class="game-footer"><div class="footer-left"><span class="pulse-led"></span><span id="statusText">A tiny game about timing, momentum, and making a way forward.</span></div><span class="footer-right">BEST RUN <b id="bestScore">—</b></span></footer>
+    </section>
+    <section class="below-grid" aria-label="Prototype notes"><article><span class="eyebrow">THE MECHANIC</span><h2>Jump on the downbeat.</h2><p>A timed jump carries farther than a rushed one. There’s no fail state—miss a ledge and you’ll find your footing again. The beat is a guide, not a test.</p></article><article><span class="eyebrow">WHAT THIS IS</span><h2>A first playable slice.</h2><p>One original scene, one music-and-movement mechanic, and a finish. It’s an experimental browser build—not a Fortnite island, not an official Ren release, and not a validated playtest.</p></article><article><span class="eyebrow">TRY IT YOUR WAY</span><h2>Keyboard or touch.</h2><p>Use the large on-screen controls on a phone or tablet. Sound is optional. The experience uses procedural canvas art and a tiny synthesized beat, with no external asset downloads.</p></article></section>
+    <footer class="site-footer"><span>FAN-MADE CONCEPT · NOT AFFILIATED WITH OR ENDORSED BY REN OR EPIC GAMES</span><a href="https://renmakesmusic.com" target="_blank" rel="noreferrer">SUPPORT THE OFFICIAL ARTIST ↗</a></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

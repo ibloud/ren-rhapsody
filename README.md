@@ -13,15 +13,17 @@ Financial support is optional and sustains infrastructure, maintenance, accessib
 
 An interactive web blueprint and UEFN (Unreal Editor for Fortnite) map concept inspired by the music and creative work of Ren. Naming an artist or song here does not establish participation, endorsement, ownership, or permission. 
 
-This repository contains the source code for the interactive GitHub Pages site detailing the map's zones, mechanics, and publishing instructions. 
+This repository contains the interactive GitHub Pages blueprint and a short, original browser-game prototype for the first music-and-movement mechanic.
 
 🌐 **Live Site:** [The Ren Rhapsody](https://ibloud.github.io/ren-rhapsody/)
+
+🎮 **Playable Browser Slice:** [First Movement](https://ibloud.github.io/ren-rhapsody/play/)
 
 ---
 
 ## Halloween 2026: First Movement
 
-**October 31 remains our internal target for a tested public prototype and community playtest.** Deliver one short experience, one music-and-movement mechanic, original or cleared placeholder audio, a tested iPad/browser route from Break This Build, and gameplay/test evidence. The existing website remains a blueprint; the playable preview still needs implementation and independent validation.
+**October 31 remains our internal target for a tested public prototype and community playtest.** A short browser slice now implements one original scene, a beat-powered jump, synthesized placeholder audio, and an ending. Independent playtests, iPad/browser-route checks, accessibility review, and release evidence remain outstanding. The prototype is not a published Fortnite island.
 
 The browser preview is the default path. A one-zone UEFN prototype is conditional on confirmed development access and a working build by October 17. Full Fortnite publication, the five-zone production build and Xbox adaptation follow later evidence and approval gates.
 
