@@ -2,3 +2,10 @@
 @media(max-width:760px){body{padding:0 12px}.topbar{height:60px}.topbar .wordmark{font-size:9px}.wordmark i{display:none}.top-actions{gap:9px}.build-tag{font-size:8px}.icon-button{padding:7px 8px;font-size:9px}.canvas-wrap{aspect-ratio:4/3;min-height:440px;max-height:75svh}.top-hud{padding:15px}.objective strong{font-size:13px}.objective #hint{font-size:9px;max-width:210px}.beat-pulse{top:70px}.beat-label{bottom:13px;left:13px;font-size:8px}.touch-controls{display:flex}.game-footer{font-size:8px;padding:0 10px}.below-grid{grid-template-columns:1fr;gap:18px;padding:24px 3px}.below-grid article{padding-top:12px}.site-footer{flex-direction:column;font-size:7px}.intro-card{padding:18px 20px}.cover-art{height:82px;margin:12px 0 14px}.intro-card h1{font-size:34px}.howto{margin:12px 0}.howto small{font-size:7px}.overlay{padding:12px}.end-card{padding:27px 20px}}
 @media(max-height:600px) and (orientation:landscape){.canvas-wrap{min-height:0;aspect-ratio:16/9;max-height:calc(100svh - 105px)}.topbar{height:48px}.below-grid,.site-footer{display:none}.intro-card{padding:12px 18px;width:min(400px,100%)}.cover-art{display:none}.intro-card h1{font-size:28px;margin:5px 0}.intro-copy{margin-bottom:10px}.howto{padding:8px 0;margin:8px 0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Focus and recovery additions preserve the existing scene and visual direction. */
+button:focus-visible,a:focus-visible,canvas:focus-visible{outline:3px solid #ffd18a;outline-offset:3px}
+canvas:focus-visible{outline-offset:-4px}
+.showcase-note{color:#dce1ef;font-size:14px;line-height:1.5;margin:12px 0}
+@media(pointer:coarse){.touch-controls{display:flex}}
+@media(max-width:480px){.build-tag{display:none}.top-actions{gap:5px}.wordmark{gap:5px}}

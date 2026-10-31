@@ -38,3 +38,10 @@ The full Fortnite path remains separate: actual UEFN build, applicable rights an
 The site's checkbox dashboard is personal browser-local planning. It is not an audited completion percentage. Checked boxes require linked build/test evidence before they can support a release claim. The new preview checklist uses a separate storage key so old island-readiness selections do not count toward the narrowed target.
 
 Resume here: complete the October 15 environment and scope record, then attach evidence for each subsequent checkpoint. Documentation changes alone do not implement or deploy the preview.
+
+
+## October 31 checkpoint — development showcase prepared
+
+The target date is retained. [Verification record](FIRST-MOVEMENT-VERIFICATION-2026-10-31.md) documents a completed automated browser run, five fragments, synthesized signal, touch emulation and focused fixes. These are implementer/automation observations, not independent completion or physical iPad acceptance. The accepted tested-public-preview/community-playtest gate is unmet in this record. Prepare the specified **development-showcase fallback** with this limitation visible; do not represent it as an accepted release or rename the blueprint as gameplay. Reviewed merge/publication and actual public-route verification remain separate next actions.
+
+The original one-scene, one-mechanic scope, music permissions and deferred work remain unchanged. Existing issue #11 separately owns proposed storyboard work; no asset or 3D scene is imported into First Movement.
