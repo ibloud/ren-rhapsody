@@ -23,7 +23,7 @@ This repository contains the interactive GitHub Pages blueprint and a short, ori
 
 ## Halloween 2026: First Movement
 
-**October 31 remains our internal target for a tested public prototype and community playtest.** A short browser slice now implements one original scene, a beat-powered jump, synthesized placeholder audio, and an ending. Independent playtests, iPad/browser-route checks, accessibility review, and release evidence remain outstanding. The prototype is not a published Fortnite island.
+**October 31 remains our internal target for a tested public prototype and community playtest.** A short browser slice now implements one original scene, a beat-powered jump, synthesized placeholder audio, and an ending. The October 31 source review fixes keyboard focus, interruption recovery and a final-rooftop recovery blocker; automated runs complete with five fragments and synthesized audio. Independent completion, actual iPad/Safari access and accessibility acceptance remain outstanding, so the prepared outcome is a development showcase. See [dated verification and unmet gates](docs/FIRST-MOVEMENT-VERIFICATION-2026-10-31.md). The prototype is not a published Fortnite island.
 
 The browser preview is the default path. A one-zone UEFN prototype is conditional on confirmed development access and a working build by October 17. Full Fortnite publication, the five-zone production build and Xbox adaptation follow later evidence and approval gates.
 
