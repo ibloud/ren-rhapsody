@@ -54,3 +54,5 @@ first: a complete run, blocker fixes, actual iPad/input observations, independen
 completion and an honest release record. Polyfork is optional later production
 learning; it is not a reason to convert the current slice to 3D or create another
 storyboard assignment.
+
+[Three proposed original blocking diagrams, editable source, text descriptions and current Polyfork licensing/access findings](../assets/storyboard-issue-11/README.md) continue existing issue #11. These are review artifacts, not imported vendor geometry, accepted canon or game integration.

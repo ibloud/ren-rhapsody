@@ -1,0 +1,84 @@
+{
+  "room_m": [
+    6,
+    3,
+    8
+  ],
+  "chair_center": [
+    0,
+    0,
+    1
+  ],
+  "console_center": [
+    0,
+    0,
+    -0.35
+  ],
+  "display_centers": [
+    [
+      -1.5,
+      1.8,
+      -2.8
+    ],
+    [
+      0,
+      1.8,
+      -2.8
+    ],
+    [
+      1.5,
+      1.8,
+      -2.8
+    ]
+  ],
+  "costume": "plain charcoal",
+  "light": "cool white, restrained amber",
+  "status": "proposed staging, not accepted canon",
+  "shots": [
+    {
+      "id": "01-wide",
+      "camera": [
+        5,
+        3.4,
+        7
+      ],
+      "target": [
+        0,
+        1,
+        -0.4
+      ],
+      "lean": 0,
+      "gesture": "hands resting"
+    },
+    {
+      "id": "02-approach",
+      "camera": [
+        4.2,
+        2,
+        1.8
+      ],
+      "target": [
+        0,
+        1,
+        -0.1
+      ],
+      "lean": 0.24,
+      "gesture": "right hand approaches console without contact"
+    },
+    {
+      "id": "03-withdraw",
+      "camera": [
+        2.8,
+        1.8,
+        1.6
+      ],
+      "target": [
+        0,
+        1,
+        0.1
+      ],
+      "lean": 0,
+      "gesture": "right hand withdrawn to chair arm; head remains toward displays"
+    }
+  ]
+}
