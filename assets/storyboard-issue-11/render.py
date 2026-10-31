@@ -43,6 +43,9 @@ for shot in scene['shots']:
  for x in [-.25,.25]:
   elbow=[x,.92,z+.03];hand=[x,.8,.85]
   if shot['id']=='02-approach' and x>0:elbow=[x,1.03,.5];hand=[.2,1.01,.09] # 0.1m+ clearance from console; no contact.
-  limb([x,1.2,z],elbow,width=11);marks.append(shapes.pop());limb(elbow,hand,width=10);marks.append(shapes.pop())
+  limb([x,1.2,z],elbow,width=11)
+  if x>0 and shot['id']!='01-wide':marks.append(shapes.pop())
+  limb(elbow,hand,width=10)
+  if x>0 and shot['id']!='01-wide':marks.append(shapes.pop())
  svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc"><title id="title">'+shot['id']+'</title><desc id="desc">Proposed original blocking diagram: '+shot['gesture']+'. One anonymous adult, one chair, one console, three abstract displays. Not accepted canon.</desc><rect width="960" height="540" fill="#171a20"/>'+''.join(v for _,v in background)+''.join(v for _,v in sorted(shapes,reverse=True))+''.join(v for _,v in marks)+'</svg>'
  (root/(shot['id']+'.svg')).write_text(svg+'\n')
