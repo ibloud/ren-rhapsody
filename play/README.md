@@ -26,6 +26,8 @@ The jump gets a little extra lift on the beat. A forgiving mid-air jump and roof
 
 ## October 31 verification / showcase status
 
+Current summary: [First Movement development record](https://ibloud.github.io/ren-rhapsody/#play-submission), updated November 3. PR #13 is merged; optional Quiet Beat remains on `review/quiet-beat`, outside main and not verified live.
+
 The existing one-scene prototype has automated keyboard/touch-emulation and native synthesized-signal checks. [Dated verification, reproducible steps and remaining acceptance gates](../docs/FIRST-MOVEMENT-VERIFICATION-2026-10-31.md) distinguish these from independent playtests and physical iPad Safari acceptance. The latter remain unmet; the prepared Halloween outcome is a clearly labeled development showcase, not an accepted public release or a new deadline.
 
 Optional maintainer regression check, with Playwright and Chromium already installed externally:

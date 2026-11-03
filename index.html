@@ -302,35 +302,34 @@
         </section>
 
         <section class="mission-control" id="play-submission" aria-labelledby="play-title">
-            <div class="mission-kicker">Halloween 2026 / First Movement</div>
-            <h2 id="play-title">ONE FINISHED PIECE. A TESTED PREVIEW.</h2>
-            <p class="mission-lead">October 31 remains the internal target for an independently tested public prototype and community playtest. An experimental browser slice is now playable: one original scene, one beat-powered jump, synthesized placeholder audio, and a short route to an ending. It is not yet independently validated, and it is not a Fortnite island. A one-zone UEFN prototype remains conditional on confirmed development access and a working build.</p>
-            <div class="mission-grid" aria-label="Personal preview planning checklist">
-                <div class="mission-stat"><strong id="play-days">—</strong><span>Days to target</span></div>
-                <div class="mission-stat"><strong id="play-percent">0%</strong><span>Local checklist selected</span></div>
-                <div class="mission-stat"><strong id="play-done">0/10</strong><span>Local selections</span></div>
-                <div class="mission-stat"><strong>10.31.26</strong><span>Preview target</span></div>
+            <div class="mission-kicker">First Movement / development record / 3 November 2026</div>
+            <h2 id="play-title">A BUILT PROTOTYPE. OPEN ACCEPTANCE GATES.</h2>
+            <p class="mission-lead">First Movement demonstrates a small beginning-to-end browser interaction: one original rooftop route, beat-assisted jumping, five light fragments, locally synthesized audio, and an ending. The October 31 fixes are merged in the source. This is a development showcase, not an independently accepted playtest or a published Fortnite island.</p>
+            <div class="mission-grid" aria-label="Evidence status, not a countdown">
+                <div class="mission-stat"><strong>10/31</strong><span>2026 checkpoint</span></div>
+                <div class="mission-stat"><strong>Merged</strong><span>Recovery fixes</span></div>
+                <div class="mission-stat"><strong>Local</strong><span>Automated checks</span></div>
+                <div class="mission-stat"><strong>Open</strong><span>Human acceptance</span></div>
             </div>
-            <div class="mission-bar" aria-label="Local checklist selections"><span id="play-bar"></span></div>
-            <div class="mission-gates" id="play-gates">
-                <label class="mission-gate"><input type="checkbox" data-play-gate="loop"><span><b>COMPLETE SHORT EXPERIENCE</b><small>One scene, one meaningful music-and-movement action, and an ending work.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="audio"><span><b>DOCUMENTED AUDIO</b><small>Original or cleared placeholder audio has source and permitted-use evidence.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="route"><span><b>BROWSER / IPAD ROUTE</b><small>The actual preview entry route works from Break This Build on iPad.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="independent"><span><b>INDEPENDENT COMPLETION</b><small>Participants complete the chosen build and provide reproducible observations.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="access"><span><b>ACCESSIBILITY FINDINGS</b><small>Input and assistive-technology checks are recorded with known limitations.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="blockers"><span><b>BLOCKERS RESOLVED</b><small>Blocking bugs are fixed and retested before opening the preview.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="capture"><span><b>GAMEPLAY EVIDENCE</b><small>Capture shows the actual beginning-to-end build, not a concept animation.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="record"><span><b>REVISION AND TEST RECORD</b><small>Build identifier, results and audio provenance are assembled.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="url"><span><b>RELEASE LINK VERIFIED</b><small>An independent participant can open the actual preview and follow instructions.</small></span></label>
-                <label class="mission-gate"><input type="checkbox" data-play-gate="next"><span><b>NEXT STEP AND LIMITATIONS</b><small>Public labels distinguish preview, future island, and remaining work.</small></span></label>
-            </div>
-            <div class="mission-ready" id="play-ready">LOCAL PLANNING ONLY — RELEASE EVIDENCE REQUIRED.</div>
-            <div class="mission-note"><strong>Evidence before release:</strong> these selections are stored only in this browser and do not establish completed work, accessibility acceptance, artist permission, platform approval, or deployment. <a href="docs/HALLOWEEN-2026-FIRST-MOVEMENT.md">Read the checkpoints and release acceptance</a>. October 15: confirm environment and scope. October 17: require a complete prototype. October 24: independent testing. October 28: freeze and verify. October 31: open the tested preview. If playable acceptance fails, publish a clearly labeled development showcase and record the missed playable target.</div>
+            <h3>What shipped in source and what was tested</h3>
+            <p><a href="https://github.com/ibloud/ren-rhapsody/pull/13">Merged PR #13</a> corrected Start/Restart focus, interruption recovery, tablet-width controls, and a final-rooftop recovery blocker. The <a href="https://github.com/ibloud/ren-rhapsody/blob/0235ba0094347f03594b9b8c4f0d3f984f59561b/docs/FIRST-MOVEMENT-VERIFICATION-2026-10-31.md">October 31 verification record</a> reports Linux Chromium automation completing all five fragments and the ending, keyboard focus/restart, touch emulation, sound-state recovery, and a non-zero native Web Audio signal. These are automated engineering observations, not independent playtesting or a human audio-quality review.</p>
+            <p>GitHub records a successful Pages deployment of source <code>0235ba0</code> on October 31. Direct inspection of the current public page and the Break This Build → game route was blocked during this review; deployment metadata does not prove the current serving artifact or target-device behavior.</p>
+            <h3>What remains open</h3>
+            <p>Independent completion reports, physical iPad Safari touch/rotation/interruption checks, VoiceOver acceptance, and listening on actual hardware remain unverified. The visual canvas platformer is not established as a screen-reader-accessible experience. No UEFN island, artist participation, or music permission is established.</p>
+            <h3>Quiet Beat: optional review work</h3>
+            <p><a href="https://github.com/ibloud/ren-rhapsody/tree/review/quiet-beat">review/quiet-beat</a>, commit <a href="https://github.com/ibloud/ren-rhapsody/commit/e471e6db31115020660a885aefab70c32bed1347"><code>e471e6d</code></a>, adds an optional no-score tapping mode with 48/60/72 BPM, keyboard/button input, an optional synthesized tone, and stop-on-hide behavior. It is one commit ahead of main as inspected November 3. It is not merged, not verified live, and not evidence of physical-device or accessibility acceptance.</p>
+            <div class="mission-note"><strong>Historical Halloween checkpoint:</strong> October 31, 2026 was the tested-public-preview/community-playtest target. The dated record did not meet independent/device acceptance, so the development-showcase fallback applies. The deadline is preserved as history, not restarted. <a href="docs/HALLOWEEN-2026-FIRST-MOVEMENT.md">Original scope and checkpoints</a> · <a href="docs/FIRST-MOVEMENT-VERIFICATION-2026-10-31.md">Verification and November 3 source follow-up</a>.</div>
+            <h3 id="ai-disclosure">AI assistance and asset provenance</h3>
+            <p><strong>Concept exploration:</strong> the repository preserves a larger fan-made UEFN blueprint; the inspected record does not itemize which early concepts or drafts used AI. Do not infer a human-only or wholly AI-generated origin from a commit account.</p>
+            <p><strong>Implementation:</strong> Quiet Beat is the Codex-assisted development example identified by the project owner for this review. Its linked branch is the inspectable code artifact, not an independent record of every prompt or human edit. The existing First Movement fixes and automated checks are documented in PR #13; that record does not establish independent human acceptance.</p>
+            <p><strong>Drafting and verification:</strong> Codex assisted this November 3 status update, source tracing, and the automated checks reported in its review handoff. Generated prose is not verification evidence. Dominique retains release and canon decisions under the existing project record; no independent tester or artist approval is claimed.</p>
+            <p><strong>Browser runtime:</strong> First Movement runs local JavaScript/canvas and Web Audio synthesis, with no model API, account, external game asset, or downloaded artist recording. Quiet Beat's reviewed JavaScript also uses local timing and optional oscillator tones, not an AI service. Development-time AI assistance does not mean the browser generates content with a model.</p>
+            <p><strong>Audio:</strong> the prototype uses oscillator tones and generated noise in <a href="https://github.com/ibloud/ren-rhapsody/blob/0235ba0094347f03594b9b8c4f0d3f984f59561b/play/game.js">game.js</a>, not Ren recordings. <strong>Art:</strong> the playable scenery is procedural canvas/CSS. Existing blueprint and social artwork retain their existing provenance limits; no new artwork attribution or clearance is asserted. ArtCraft/Polyfork and the <a href="https://github.com/ibloud/ren-rhapsody/pull/12">issue #11 storyboard study</a> remain separate review resources, not integrated gameplay assets. <a href="docs/PROVENANCE-AND-MUSIC-RIGHTS.md">Music, participation, and rights boundaries</a> remain unchanged.</p>
         </section>
 
         <section class="platform-roadmap" id="platform-publishing">
             <h2>From Play Submission to Platform Publication</h2>
-            <p>The October 31 target is a tested preview. Full Fortnite publication and Xbox adaptation are later paths with separate build, rights, testing and platform gates. No verified UEFN release is claimed.</p>
+            <p>The historical October 31 checkpoint targeted a tested preview; its unmet acceptance gates are recorded above. Full Fortnite publication and Xbox adaptation are later paths with separate build, rights, testing and platform gates. No verified UEFN release is claimed.</p>
             <div class="platform-grid">
                 <div class="platform-card"><h3>Epic Games / Fortnite — primary</h3><ol><li>Complete the full UEFN release checks in the First Movement plan; the preview checklist above does not establish island readiness.</li><li>Resolve rights/attribution and use cleared or approved audio for the public island.</li><li>Build and test the island in UEFN, then publish through Epic's Creator Portal workflow.</li><li>Pass Epic moderation and release the approved island; capture the Island Code and player-facing metadata.</li></ol><p style="margin-top:10px">The website is the design/evidence layer; the actual publishable product is the UEFN island.</p></div>
                 <div class="platform-card"><h3>Xbox — adaptation path</h3><ol><li>Use the finished playable experience and evidence package as the concept/prototype foundation.</li><li>Prepare an Xbox-native build rather than treating a Fortnite island or GitHub site as the Xbox product.</li><li>Enter the Xbox creator/Partner Center process, complete required agreements and product setup, then build against the applicable Xbox/GDK workflow.</li><li>Submit the product for certification and, if approved, configure its Xbox release.</li></ol><p style="margin-top:10px">This is a future port/publishing route, not a claim that Epic/Fortnite publication automatically grants Xbox publication.</p></div>
@@ -437,7 +436,7 @@
         <!-- Build Requirements -->
         <section id="dev-scope">
             <h2>Build Requirements & Scope</h2>
-            <p>Building "The Ren Rhapsody" in UEFN is an ambitious but achievable project. The estimates below are early planning assumptions for the larger UEFN concept, not measured work or a release commitment. The one-scene First Movement plan above sets the Halloween scope.</p>
+            <p>Building "The Ren Rhapsody" in UEFN is an ambitious but achievable project. The estimates below are early planning assumptions for the larger UEFN concept, not measured work or a release commitment. The one-scene First Movement record above preserves the Halloween scope and open acceptance gates.</p>
             
             <div class="zone-grid" style="margin-top: 30px; margin-bottom: 30px;">
                 <div class="card">
@@ -468,7 +467,7 @@
 
             <div class="card" style="border-color: var(--accent-cyan); background: rgba(0, 242, 255, 0.05);">
                 <h3 style="color: var(--accent-cyan);">🚀 First Movement: the current minimum scope</h3>
-                <p>For Halloween, build <strong>one scene, one music-and-movement interaction, and an ending</strong> using original or cleared placeholder audio. The browser preview is the default path.</p>
+                <p>The Halloween scope was <strong>one scene, one music-and-movement interaction, and an ending</strong> using original or cleared placeholder audio. That browser slice now exists; independent acceptance remains open.</p>
                 <p style="margin-top: 10px;">The five-zone UEFN journey remains a future concept. We have not measured the time needed to finish or publish it, and do not promise a weekend release. Follow the First Movement checkpoints and require a tested beginning-to-end build before calling the preview playable.</p>
             </div>
             </details>
@@ -476,46 +475,32 @@
 
         <!-- Career Retraining Section -->
         <section id="career-retraining">
-            <h2>Career Retraining & Portfolio Building</h2>
-            <p>Are you recently laid off and looking to pivot into the tech or gaming industry? Building this map is a 100% free, project-based learning course that looks incredible on a resume. Here is how this project translates to a new career.</p>
-            
-            <div class="zone-grid" style="margin-top: 30px; margin-bottom: 30px;">
+            <h2>Career Retraining &amp; Portfolio Building</h2>
+            <p>A small prototype can make scope, design choices, implementation, and corrections visible to a reviewer. It does not promise employment, a commission, benefits-program eligibility, or an artist relationship. AI tools are optional; candidates can show their own reasoning whether they use them or not.</p>
+            <div class="zone-grid">
                 <div class="card">
-                    <h3>🎓 Transferable Tech Skills</h3>
-                    <p>By building this map, you will self-teach highly sought-after skills:</p>
-                    <ul>
-                        <li><strong>Object-Oriented Programming:</strong> Writing Verse code teaches logic applicable to C#, Python, and Java.</li>
-                        <li><strong>Technical Art:</strong> Using UEFN's Material Editor teaches node-based shader logic (used in Unity and Unreal Engine).</li>
-                        <li><strong>Level Design:</strong> Spatial reasoning, player flow, and UX/UI design.</li>
-                        <li><strong>Project Management:</strong> Taking a concept from greybox to production.</li>
-                    </ul>
+                    <h3>One concrete portfolio exercise</h3>
+                    <p>Fork the current First Movement build. Choose one small interaction or accessibility improvement—for example, clearer Pause/Resume instructions or focus feedback after an interruption. Keep the rooftop scene and rights boundaries intact; do not add artist audio.</p>
+                    <ol>
+                        <li>Write a short brief: the observed problem, intended user, change, exclusions, and how you will judge it.</li>
+                        <li>Record the starting commit. Explain any AI help with exploration, code, copy, or tests; name what you reviewed, rejected, and corrected yourself.</li>
+                        <li>Show before/after steps, expected and actual results, device/browser/input, and relevant automated checks. Label emulation separately from real-device and screen-reader testing.</li>
+                        <li>Link your code diff or demo and a concise case study: scope, decisions, one correction, remaining limits, and the next test. Do not claim accessibility acceptance without that evidence.</li>
+                    </ol>
+                    <p><a href="https://github.com/ibloud/ren-rhapsody/blob/0235ba0094347f03594b9b8c4f0d3f984f59561b/play/README.md">Run the existing build and checks</a> · <a href="#play-submission">Compare the project's evidence record</a>.</p>
                 </div>
-
                 <div class="card">
-                    <h3>💼 Resume & Portfolio Outcomes</h3>
-                    <p>Once finished, you don't just have a map—you have portfolio pieces.</p>
-                    <ul>
-                        <li><strong>For Game Studios:</strong> A playable level demonstrating pacing, mechanics, and art direction.</li>
-                        <li><strong>For Tech Roles:</strong> A GitHub repository containing your custom Verse scripts and logic flows.</li>
-                        <li><strong>For UI/UX Roles:</strong> A case study on player feedback, lighting cues, and interactive audio design.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>📚 Free Learning Resources</h3>
-                    <p>You don't need a paid bootcamp. Everything you need is free:</p>
-                    <ul>
-                        <li><strong>UEFN & Verse:</strong> Epic Games' official Creative Devs YouTube channel.</li>
-                        <li><strong>Audio Editing:</strong> Audacity (free open-source DAW) tutorials on YouTube.</li>
-                        <li><strong>3D Art:</strong> Blender Guru (free) for custom props if you want to take it further.</li>
-                    </ul>
+                    <h3>Optional AI learning resources</h3>
+                    <p><a href="https://joinhandshake.com/move-program/referral?referralCode=AB04EB&amp;utm_source=referral">Handshake MOVE — referral link</a>. The owner describes a “Vibe Code an App” mission using Google AI Studio in a Handshake screenshot. That screenshot was not available to inspect in this review, and the referral landing page was inaccessible. Current mission availability, free access, account requirements, and referral terms are unverified; check them before joining. No reward or eligibility claim is made here.</p>
+                    <p><a href="https://opinionai.substack.com/p/free-ai-courses-from-anthropic-google">Opinion AI's free AI learning path</a> is a third-party guide to free learning resources, published May 31, 2026 and checked November 3. Its linked learning material is distinct from Opinion AI's paid companion guides. The guide notes that some resources require an account and some certificates cost money; confirm current conditions with each provider.</p>
+                    <p>Both links are optional learning choices, separate from contributor approval, employment, or payment. You do not need to join a program or buy companion material to complete this portfolio exercise.</p>
                 </div>
             </div>
-
-            <div class="card" style="border-color: var(--accent-magenta); background: rgba(255, 0, 255, 0.05);">
-                <h3 style="color: var(--accent-magenta);">📋 Unemployment & Vocational Rehab Justification</h3>
-                <p>If your unemployment office or vocational rehabilitation program requires you to justify your learning hours, you can classify this project as a <strong>"Self-Directed Game Development Bootcamp."</strong></p>
-                <p style="margin-top: 10px;">Log your hours (e.g., 30 hours/week) as active retraining. You are learning an industry-standard engine (Unreal Engine 5 framework), a proprietary programming language (Verse), and producing a tangible, published software product at the end. This qualifies as active upskilling for roles in QA testing, level design, technical art, and software development.</p>
+            <div class="card">
+                <h3>A review prototype and a commissioned collaboration are different paths</h3>
+                <p><strong>Prototype for review:</strong> a bounded, independent demonstration can show your scope, design, and execution. Sending unsolicited material leaves the artist free to decline or ignore it; silence is not consent, approval, or a licence.</p>
+                <p><strong>Commissioned or invited work:</strong> agree on the brief, permissions, credit, scope, and any payment before work proceeds. An invitation to discuss a project is not an agreement to use protected material.</p>
+                <p><strong>Ren's Rhapsody public record:</strong> the repository and merged PR #13 document a fan-made blueprint and an original browser slice. They provide public review artifacts, but the inspected Rhapsody record does not establish private delivery to Ren or his team, receipt, response, an invitation, or a commission. That is where this record ends. Learn from the documented development process without inventing a relationship.</p>
             </div>
         </section>
 
@@ -540,8 +525,8 @@
                     <p><strong>Rights gate:</strong> Copyright and platform eligibility need to be resolved for the exact music and uses before treating a public build as monetizable. Prototype with cleared/original/placeholder audio while that question remains open.</p>
                 </div>
                 <div class="card">
-                    <h3>🤝 Official Partnership</h3>
-                    <p>Build a polished "Zone 1" prototype, then pitch it to Ren's team for an official collaboration. This would allow legal monetization and massive exposure.</p>
+                    <h3>🤝 Possible invited collaboration</h3>
+                    <p>A prototype may support a review conversation. It does not establish an invitation, permission, monetization eligibility, or exposure. Any commissioned or invited collaboration requires an agreed brief, rights, credit, and scope before work proceeds.</p>
                 </div>
             </div>
         </section>
@@ -634,17 +619,6 @@
     </footer>
 
 
-<script>
-(() => {
- const target=new Date('2026-10-31T23:59:59-05:00'), key='renRhapsodyFirstMovementChecklistV1';
- const gates=[...document.querySelectorAll('[data-play-gate]')]; let state={};
- try{state=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
- function render(){const done=gates.filter(x=>state[x.dataset.playGate]).length,p=Math.round(done/gates.length*100);document.getElementById('play-percent').textContent=p+'%';document.getElementById('play-done').textContent=done+'/'+gates.length;document.getElementById('play-bar').style.width=p+'%';document.getElementById('play-ready').textContent=p===100?'LOCAL CHECKLIST SELECTED — VERIFY LINKED EVIDENCE BEFORE RELEASE.':'LOCAL PLANNING ONLY — '+(gates.length-done)+' ITEMS UNSELECTED.';gates.forEach(x=>x.checked=!!state[x.dataset.playGate]);}
- gates.forEach(x=>x.addEventListener('change',()=>{state[x.dataset.playGate]=x.checked;try{localStorage.setItem(key,JSON.stringify(state))}catch(e){}render()}));
- function tick(){const s=Math.max(0,Math.floor((target-Date.now())/1000));document.getElementById('play-days').textContent=Math.floor(s/86400);}
- tick();setInterval(tick,1000);render();
-})();
-</script>
 
 </body>
 </html>
