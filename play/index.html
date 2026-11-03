@@ -15,7 +15,13 @@
       <div class="top-actions"><button id="pauseButton" class="icon-button" type="button" aria-pressed="false" disabled>PAUSE</button><span class="build-tag"><span class="live-dot"></span> BROWSER PROTOTYPE · 01</span><button id="soundToggle" class="icon-button" type="button" aria-label="Toggle sound" title="Toggle sound">♫ <span id="soundLabel">SOUND ON</span></button></div>
     </header>
 
-    <p class="showcase-note">31 October development showcase: independent completion and physical iPad acceptance are still pending. This is not an accepted release.</p>
+    <p class="showcase-note">Break This Build 2027: start, play, recover, finish. Ordinary-input checks are proxies; physical MouthPad, VOX, iPad Safari and VoiceOver acceptance remain blocked. The October 31 development showcase remains the historical checkpoint.</p>
+    <div class="showcase-note" aria-label="Optional input assists">
+      <button id="pointerMode" class="icon-button" type="button" aria-pressed="false">Click-to-move: off</button>
+      <button id="timingAssist" class="icon-button" type="button" aria-pressed="false">Timing assist: off</button>
+      <p id="inputHelp">Optional single-pointer mode: click a direction to keep moving, click it again to stop, and click Jump separately. Pause, leaving the page, and switching modes clear movement. Timing assist gives each jump the beat boost; it does not map voice input.</p>
+      <a href="../#hands-free-2027">Break This Build 2027 · input evidence and test steps</a>
+    </div>
     <section class="game-frame" aria-label="Playable rhythm platform game">
       <div class="canvas-wrap">
         <canvas id="game" tabindex="0" aria-label="Game area. Use the arrow keys or A and D to move, and Space, W, or Up to jump. On touch screens, use the on-screen controls."></canvas>

@@ -43,3 +43,9 @@ Serve the repository first as above. Set `FIRST_MOVEMENT_URL` for another review
 - Original, procedural canvas scenery and locally synthesized tones; no artist recordings, external game assets, third-party libraries, or asset downloads.
 - Fan-made concept; not affiliated with, sponsored by, or endorsed by Ren or Epic Games.
 - This is an experimental browser prototype, **not** a published Fortnite island or an independently validated playtest. Touch, accessibility, and cross-browser acceptance still need human testing on target devices.
+
+## Break This Build 2027 input experiment
+
+Goal: start, play, recover and finish. **Click-to-move** is optional and off by default: click a direction to latch it, again to stop, then click Jump independently. Pause, restart, leaving the page and switching modes clear movement. **Timing assist**, also off by default, grants the beat boost without rhythm timing. Assisted runs are labeled and do not update the best-run record. Neither option maps voice input.
+
+The ordinary Linux Chromium proxy reaches the five-fragment ending and tests missed-ledge recovery. Physical MouthPad, VOX, iPad Safari and VoiceOver remain blocked/unverified. See the existing [status and evidence tracks](../index.html#hands-free-2027) and [shared test packet](https://github.com/Loptr-Lab/duet-solo-hackathon/blob/review/ren-development-record/docs/PRODUCTION_PLAYTEST.md). The existing browser regression now also covers the optional input path. Quiet Beat remains its own review branch, not part of this release candidate.

@@ -9,3 +9,6 @@ canvas:focus-visible{outline-offset:-4px}
 .showcase-note{color:#dce1ef;font-size:14px;line-height:1.5;margin:12px 0}
 @media(pointer:coarse){.touch-controls{display:flex}}
 @media(max-width:480px){.build-tag{display:none}.top-actions{gap:5px}.wordmark{gap:5px}}
+
+/* Opt-in single-pointer controls reuse the existing control layout. */
+.single-pointer .touch-controls{display:flex}
