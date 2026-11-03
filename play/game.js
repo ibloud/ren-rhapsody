@@ -21,7 +21,7 @@
   ];
   const keys = {left:false,right:false,jump:false};
   let width=900,height=506,dpr=1,scale=1, running=false, won=false, muted=false, audio=null, beatTimer=null;
-  let paused=false,pausedAt=0,singlePointer=false,timingAssist=false,timingAssistUsed=false;
+  let paused=false,pausedAt=0,singlePointer=false,timingAssist=false,timingAssistUsed=false,firstJump=false,firstSuccessRecorded=false;
   let gameStart=0,lastFrame=0,camera=0,scoreBeats=0,landings=0,frame=0,particles=[];
   let player, found, checkpoint=50, checkpointY=416, beatPhase=0, lastBeat=-1, best=0;
   try{ best=Number(localStorage.getItem('ren-first-movement-best')||0); }catch(_){}
@@ -34,7 +34,7 @@
   }
   new ResizeObserver(resize).observe(canvas);window.addEventListener('resize',resize);resize();
   function reset(){
-    clearControls();timingAssistUsed=false;paused=false;ui.pause.disabled=false;ui.pause.textContent='PAUSE';ui.pause.setAttribute('aria-pressed','false');
+    clearControls();timingAssistUsed=false;firstJump=false;firstSuccessRecorded=false;$('firstSuccess').textContent='First goal: move and make a jump.';paused=false;ui.pause.disabled=false;ui.pause.textContent='PAUSE';ui.pause.setAttribute('aria-pressed','false');
     player={x:62,y:414,vx:0,vy:0,w:23,h:38,grounded:true,coyote:0,jumpBuffer:0,glow:0};
     found=new Set();camera=0;checkpoint=50;checkpointY=416;scoreBeats=0;landings=0;particles=[];frame=0;won=false;
     lastBeat=-1;beatPhase=0;gameStart=performance.now();lastFrame=gameStart;
@@ -118,6 +118,9 @@
   }
   function resumeRun(){if(!paused||won)return;gameStart+=performance.now()-pausedAt;lastFrame=performance.now();paused=false;running=true;ui.pause.textContent='PAUSE';ui.pause.setAttribute('aria-pressed','false');ui.status.textContent='Resumed. Focus the game area to move; sound remains optional.';initAudio();canvas.focus({preventScroll:true});}
   ui.pause.addEventListener('click',()=>paused?resumeRun():pauseRun());
+  function openOptions(){if(running)pauseRun(false);$('inputOptions').showModal();}
+  $('optionsButton').addEventListener('click',openOptions);$('introOptions').addEventListener('click',openOptions);$('closeInputOptions').addEventListener('click',()=>$('inputOptions').close());
+  $('restartRun').addEventListener('click',()=>{ui.overlay.classList.add('hidden');reset();running=true;initAudio();canvas.focus({preventScroll:true});});
   ui.start.addEventListener('click',()=>{ui.overlay.classList.add('hidden');reset();running=true;ui.status.textContent='Find the rooftops. Listen for the next pulse.';initAudio();canvas.focus?.();});
   ui.restart.addEventListener('click',()=>{reset();running=true;ui.endOverlay.classList.add('hidden');ui.status.textContent='Find the rooftops. Listen for the next pulse.';initAudio();canvas.focus({preventScroll:true});});
 
@@ -146,13 +149,14 @@
     if(player.grounded)player.coyote=.11;else player.coyote=Math.max(0,player.coyote-dt);
     if(player.jumpBuffer>0&&(player.grounded||player.coyote>0||!player.airJumped)){
       const clean=beatDist<125,early=t%BPM_MS<BPM_MS/2&&t%BPM_MS<125;
-      const sync=timingAssist||clean||early;
+      const sync=timingAssist||clean||early;firstJump=true;
       if(timingAssist)timingAssistUsed=true;
       const launchingFromGround=player.grounded||player.coyote>0;
       player.vy=sync?-708:-565;player.grounded=false;player.coyote=0;player.jumpBuffer=0;player.glow=sync?.3:0;
       if(!launchingFromGround)player.airJumped=true;
       if(sync){scoreBeats++;addBurst(player.x+player.w/2,player.y+player.h,'#ffd18a',4);ui.status.textContent='On the beat — a little extra lift.';}
     }
+    if(firstJump&&player.x>95&&!firstSuccessRecorded){firstSuccessRecorded=true;$('firstSuccess').textContent='First success: you moved and jumped. Follow the lights, or replay when ready.';}
     if(player.y>height+110){
       const nextRoof=platforms.find(p=>p.x>player.x&&p.x-player.x<180);
       let safe=nextRoof;

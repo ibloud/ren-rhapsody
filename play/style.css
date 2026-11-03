@@ -12,3 +12,18 @@ canvas:focus-visible{outline-offset:-4px}
 
 /* Opt-in single-pointer controls reuse the existing control layout. */
 .single-pointer .touch-controls{display:flex}
+
+/* Onboarding uses the existing scene, type and color roles. */
+.topbar{height:auto;min-height:64px;flex-wrap:wrap;gap:8px;padding:8px 0}
+.top-actions{flex-wrap:wrap;gap:8px}.topbar .wordmark{font-size:12px}.icon-button{min-height:48px;font-size:13px;letter-spacing:normal}
+.start-actions{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}.start-actions .primary-button{flex:1;min-width:120px}.start-actions .icon-button{flex:1;min-width:120px}
+.primary-button{min-height:48px;font-size:14px;letter-spacing:normal}.intro-copy{font-size:16px;line-height:1.5}.intro-card{max-height:100%;overflow:auto}.rights-note{font-size:12px;color:#b9bfd0}
+#inputOptions{max-width:min(560px,calc(100vw - 32px));max-height:85svh;overflow:auto;border:1px solid var(--cyan);border-radius:8px;background:#101421;color:#e8ebf5;padding:24px;font:16px/1.5 var(--sans)}
+#inputOptions::backdrop{background:#000b}#inputOptions button{margin:4px 4px 8px 0}#inputOptions h2{font-size:24px;margin:0 0 16px}
+.game-help{display:flex;flex-wrap:wrap;gap:16px;padding:8px 16px}.game-help a,.home-link{display:inline-flex;align-items:center;min-height:48px;color:var(--cyan);font-size:15px}.feedback-copy{font:14px/1.5 var(--sans);color:#b9bfd0}.showcase-note{font-size:16px}
+.end-card{max-height:100%;overflow:auto}.end-card .intro-copy{font-size:16px}
+@media(max-width:760px){.intro-card .cover-art{height:56px}.intro-card h1{font-size:30px}.howto{display:none}.intro-card{padding:16px}.top-actions{width:100%}.top-actions .icon-button{flex:1}.top-actions .build-tag{display:none}}
+@media(prefers-reduced-motion:reduce){.start-actions *,#inputOptions *{animation:none!important;transition:none!important}}
+
+/* Keep the first action visible before decorative context in the overlay. */
+.intro-card{padding:20px}.intro-card h1{font-size:32px;line-height:1.1;margin:8px 0}.intro-card .intro-copy{margin:0 0 12px}.intro-card .cover-art{height:72px;margin:12px 0}
