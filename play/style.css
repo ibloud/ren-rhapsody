@@ -9,3 +9,12 @@ canvas:focus-visible{outline-offset:-4px}
 .showcase-note{color:#dce1ef;font-size:14px;line-height:1.5;margin:12px 0}
 @media(pointer:coarse){.touch-controls{display:flex}}
 @media(max-width:480px){.build-tag{display:none}.top-actions{gap:5px}.wordmark{gap:5px}}
+
+.quiet-card { margin: 2rem auto; max-width: 34rem; }
+.quiet-card select { font: inherit; margin: .5rem; min-height: 44px; }
+.quiet-card label { display: block; margin-top: .75rem; }
+.quiet-controls { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
+.quiet-controls button { min-height: 48px; }
+.quiet-controls [data-tapped] { outline: 3px solid currentColor; outline-offset: 2px; }
+.quiet-cue { font-size: 2rem; line-height: 1; opacity: .45; }
+.quiet-cue[data-beat] { opacity: 1; }

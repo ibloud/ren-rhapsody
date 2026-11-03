@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiet Beat | Ren Rhapsody</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="quiet-beat.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="wordmark" href="./">← First Movement</a></header>
+    <section class="intro-card quiet-card" aria-labelledby="quiet-title">
+      <div class="cover-art" aria-hidden="true"><div class="moon"></div><div class="cover-ridge ridge-back"></div><div class="cover-ridge ridge-front"></div><div class="cover-player">✦</div></div>
+      <h1 id="quiet-title">Quiet Beat</h1>
+      <p>Take a quiet moment. Start a steady beat and tap along at your own pace. There’s no score, and you can stop anytime.</p>
+      <p>Tap the button or focus it and press Space or Enter. Turn on the optional tone to follow by ear.</p>
+      <label for="tempo">Tempo</label>
+      <select id="tempo">
+        <option value="48">48 beats per minute</option>
+        <option value="60" selected>60 beats per minute</option>
+        <option value="72">72 beats per minute</option>
+      </select>
+      <label><input id="tone" type="checkbox"> Play a soft tone</label>
+      <div class="quiet-controls">
+        <button id="session" class="icon-button" type="button">Start beat</button>
+        <button id="tap" class="primary-button" type="button" disabled>Tap along</button>
+      </div>
+      <p class="quiet-cue" id="cue" aria-hidden="true">✦</p>
+      <p id="session-status" role="status">Beat stopped.</p>
+    </section>
+  </main>
+</body>
+</html>
