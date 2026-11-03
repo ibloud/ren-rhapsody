@@ -21,13 +21,15 @@ This repository contains the interactive GitHub Pages blueprint and a short, ori
 
 ---
 
-## Halloween 2026: First Movement
+## First Movement development record — 3 November 2026
 
-**October 31 remains our internal target for a tested public prototype and community playtest.** A short browser slice now implements one original scene, a beat-powered jump, synthesized placeholder audio, and an ending. The October 31 source review fixes keyboard focus, interruption recovery and a final-rooftop recovery blocker; automated runs complete with five fragments and synthesized audio. Independent completion, actual iPad/Safari access and accessibility acceptance remain outstanding, so the prepared outcome is a development showcase. See [dated verification and unmet gates](docs/FIRST-MOVEMENT-VERIFICATION-2026-10-31.md). The prototype is not a published Fortnite island.
+The one-scene browser prototype and October 31 recovery fixes are merged in [PR #13](https://github.com/ibloud/ren-rhapsody/pull/13). GitHub records a successful Pages deployment of main `0235ba0094347f03594b9b8c4f0d3f984f59561b`; the current public artifact and target-device route were not independently inspected in this review.
 
-The browser preview is the default path. A one-zone UEFN prototype is conditional on confirmed development access and a working build by October 17. Full Fortnite publication, the five-zone production build and Xbox adaptation follow later evidence and approval gates.
+Use the existing [First Movement status section](https://ibloud.github.io/ren-rhapsody/#play-submission) as the current public status record. It separates merged source, automated browser evidence, open independent/device acceptance, and optional Quiet Beat review work at `review/quiet-beat` (`e471e6db31115020660a885aefab70c32bed1347`). Quiet Beat is not merged or verified live.
 
-See [scope, dated checkpoints, responsibilities and release acceptance](docs/HALLOWEEN-2026-FIRST-MOVEMENT.md). A failed playable gate means a clearly labeled development showcase on October 31, with the missed target recorded.
+**Historical Halloween checkpoint:** October 31, 2026 remains the original tested-preview/community-playtest target. Its independent completion, physical iPad Safari/VoiceOver, and public-route gates were unmet in the [dated verification record](docs/FIRST-MOVEMENT-VERIFICATION-2026-10-31.md). The development-showcase fallback preserves that missed acceptance target; this is not a published Fortnite island. [Original scope and checkpoints](docs/HALLOWEEN-2026-FIRST-MOVEMENT.md).
+
+The public section also provides a project-specific AI disclosure and optional portfolio exercise. No artist delivery, receipt, response, invitation, or commission is established by the inspected Rhapsody sources.
 
 ## 🗺️ Project Overview
 

@@ -21,7 +21,7 @@
   ];
   const keys = {left:false,right:false,jump:false};
   let width=900,height=506,dpr=1,scale=1, running=false, won=false, muted=false, audio=null, beatTimer=null;
-  let paused=false,pausedAt=0;
+  let paused=false,pausedAt=0,singlePointer=false,timingAssist=false,timingAssistUsed=false;
   let gameStart=0,lastFrame=0,camera=0,scoreBeats=0,landings=0,frame=0,particles=[];
   let player, found, checkpoint=50, checkpointY=416, beatPhase=0, lastBeat=-1, best=0;
   try{ best=Number(localStorage.getItem('ren-first-movement-best')||0); }catch(_){}
@@ -34,7 +34,7 @@
   }
   new ResizeObserver(resize).observe(canvas);window.addEventListener('resize',resize);resize();
   function reset(){
-    clearControls();paused=false;ui.pause.disabled=false;ui.pause.textContent='PAUSE';ui.pause.setAttribute('aria-pressed','false');
+    clearControls();timingAssistUsed=false;paused=false;ui.pause.disabled=false;ui.pause.textContent='PAUSE';ui.pause.setAttribute('aria-pressed','false');
     player={x:62,y:414,vx:0,vy:0,w:23,h:38,grounded:true,coyote:0,jumpBuffer:0,glow:0};
     found=new Set();camera=0;checkpoint=50;checkpointY=416;scoreBeats=0;landings=0;particles=[];frame=0;won=false;
     lastBeat=-1;beatPhase=0;gameStart=performance.now();lastFrame=gameStart;
@@ -47,8 +47,11 @@
   function untilBeat(t){const phase=t%BPM_MS;return Math.min(phase,BPM_MS-phase);}
   function pressJump(){if(!running||won)return;keys.jump=true;player.jumpBuffer=.13;}
   function releaseJump(){keys.jump=false;if(player&&player.vy<0)player.vy*=.58;}
-  function clearControls(){keys.left=keys.right=keys.jump=false;if(player)player.jumpBuffer=0;document.querySelectorAll('[data-control]').forEach(b=>b.classList.remove('pressed'));}
-  canvas.addEventListener('blur',clearControls);
+  function clearControls(){keys.left=keys.right=keys.jump=false;if(player)player.jumpBuffer=0;document.querySelectorAll('[data-control]').forEach(b=>{b.classList.remove('pressed');b.setAttribute('aria-pressed','false');});}
+  canvas.addEventListener('blur',e=>{if(!singlePointer||!e.relatedTarget?.closest('[data-control]'))clearControls();});
+  function syncPointerButtons(){document.querySelectorAll('[data-control]').forEach(b=>{const active=singlePointer&&!!keys[b.dataset.control];b.classList.toggle('pressed',active);b.setAttribute('aria-pressed',String(active));});}
+  $('pointerMode').addEventListener('click',()=>{clearControls();singlePointer=!singlePointer;document.body.classList.toggle('single-pointer',singlePointer);$('pointerMode').setAttribute('aria-pressed',String(singlePointer));$('pointerMode').textContent='Click-to-move: '+(singlePointer?'on':'off');syncPointerButtons();ui.status.textContent=singlePointer?'Single-pointer mode on. Click a direction to move; click again to stop.':'Hold-to-move controls restored; movement stopped.';});
+  $('timingAssist').addEventListener('click',()=>{timingAssist=!timingAssist;$('timingAssist').setAttribute('aria-pressed',String(timingAssist));$('timingAssist').textContent='Timing assist: '+(timingAssist?'on':'off');ui.status.textContent='Timing assist '+(timingAssist?'on: jumps use the beat boost.':'off: ordinary jump timing restored.');});
   window.addEventListener('keydown',e=>{
     if(!running||document.activeElement!==canvas)return;
     if(['ArrowLeft','ArrowRight','ArrowUp',' ','Spacebar','a','A','d','D','w','W'].includes(e.key))e.preventDefault();
@@ -65,11 +68,12 @@
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseRun(false);});
   document.querySelectorAll('[data-control]').forEach(button=>{
     const k=button.dataset.control;
-    const down=e=>{if(!running)return;e.preventDefault();canvas.focus({preventScroll:true});button.classList.add('pressed');if(k==='jump')pressJump();else keys[k]=true;try{button.setPointerCapture(e.pointerId);}catch(_){}};
-    const up=e=>{e.preventDefault();button.classList.remove('pressed');if(k==='jump')releaseJump();else keys[k]=false;};
-    button.addEventListener('keydown',e=>{if(!running||![' ','Enter'].includes(e.key))return;e.preventDefault();if(e.repeat)return;button.classList.add('pressed');if(k==='jump')pressJump();else keys[k]=true;});
+    const down=e=>{if(singlePointer||!running)return;e.preventDefault();canvas.focus({preventScroll:true});button.classList.add('pressed');if(k==='jump')pressJump();else keys[k]=true;try{button.setPointerCapture(e.pointerId);}catch(_){}};
+    const up=e=>{if(singlePointer)return;e.preventDefault();button.classList.remove('pressed');if(k==='jump')releaseJump();else keys[k]=false;};
+    button.addEventListener('keydown',e=>{if(singlePointer)return;if(!running||![' ','Enter'].includes(e.key))return;e.preventDefault();if(e.repeat)return;button.classList.add('pressed');if(k==='jump')pressJump();else keys[k]=true;});
     button.addEventListener('keyup',e=>{if([' ','Enter'].includes(e.key))up(e);});
-    button.addEventListener('blur',()=>{button.classList.remove('pressed');if(k==='jump')releaseJump();else keys[k]=false;});
+    button.addEventListener('blur',()=>{if(singlePointer)return;button.classList.remove('pressed');if(k==='jump')releaseJump();else keys[k]=false;});
+    button.addEventListener('click',()=>{if(!singlePointer||!running)return;canvas.focus({preventScroll:true});if(k==='jump'){pressJump();keys.jump=false;}else{const move=!keys[k];keys.left=keys.right=false;keys[k]=move;}syncPointerButtons();});
     button.addEventListener('pointerdown',down);button.addEventListener('pointerup',up);button.addEventListener('pointercancel',up);button.addEventListener('lostpointercapture',up);
   });
 
@@ -142,7 +146,8 @@
     if(player.grounded)player.coyote=.11;else player.coyote=Math.max(0,player.coyote-dt);
     if(player.jumpBuffer>0&&(player.grounded||player.coyote>0||!player.airJumped)){
       const clean=beatDist<125,early=t%BPM_MS<BPM_MS/2&&t%BPM_MS<125;
-      const sync=clean||early;
+      const sync=timingAssist||clean||early;
+      if(timingAssist)timingAssistUsed=true;
       const launchingFromGround=player.grounded||player.coyote>0;
       player.vy=sync?-708:-565;player.grounded=false;player.coyote=0;player.jumpBuffer=0;player.glow=sync?.3:0;
       if(!launchingFromGround)player.airJumped=true;
@@ -167,7 +172,7 @@
     camera=Math.max(0,Math.min(WORLD-width/Math.min(1.2,width/900),player.x-width*.38));
     for(const p of particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=280*dt;p.life-=dt;}particles=particles.filter(p=>p.life>0);
   }
-  function finish(){if(won)return;won=true;running=false;paused=false;clearControls();ui.pause.disabled=true;clearInterval(beatTimer);ui.endOverlay.classList.remove('hidden');ui.endTitle.textContent=found.size===5?'The light travels.':'You found your way through.';ui.endCopy.textContent=found.size===5?'Five lights returned to the skyline. The next chapter starts with you.':'The last stage is yours. Every fragment tells a different story.';ui.endGlyph.textContent=found.size===5?'✦':'◌';ui.endEyebrow.textContent=found.size===5?'THE CITY REMEMBERS':'THE NIGHT OPENS';ui.endFragments.textContent=`${found.size} / ${fragments.length}`;ui.endBeats.textContent=String(scoreBeats);ui.endTime.textContent=formatTime((performance.now()-gameStart)/1000);ui.status.textContent='Run complete.';ui.restart.focus({preventScroll:true});if(!best||scoreBeats>best){best=scoreBeats;try{localStorage.setItem('ren-first-movement-best',String(best));}catch(_){}ui.best.textContent=String(best).padStart(2,'0');}}
+  function finish(){if(won)return;won=true;running=false;paused=false;clearControls();ui.pause.disabled=true;clearInterval(beatTimer);ui.endOverlay.classList.remove('hidden');ui.endTitle.textContent=found.size===5?'The light travels.':'You found your way through.';ui.endCopy.textContent=found.size===5?'Five lights returned to the skyline. The next chapter starts with you.':'The last stage is yours. Every fragment tells a different story.';ui.endGlyph.textContent=found.size===5?'✦':'◌';ui.endEyebrow.textContent=found.size===5?'THE CITY REMEMBERS':'THE NIGHT OPENS';ui.endFragments.textContent=`${found.size} / ${fragments.length}`;ui.endBeats.textContent=timingAssistUsed?'assist':String(scoreBeats);if(timingAssistUsed)ui.endCopy.textContent+=' Timing assist used; this run does not update the best-run record.';ui.endTime.textContent=formatTime((performance.now()-gameStart)/1000);ui.status.textContent='Run complete.';ui.restart.focus({preventScroll:true});if(!timingAssistUsed&&(!best||scoreBeats>best)){best=scoreBeats;try{localStorage.setItem('ren-first-movement-best',String(best));}catch(_){}ui.best.textContent=String(best).padStart(2,'0');}}
   function formatTime(s){return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;}
   function draw(elapsed){
     const w=width,h=height;ctx.setTransform(dpr,0,0,dpr,0,0);

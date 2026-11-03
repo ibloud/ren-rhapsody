@@ -65,3 +65,53 @@ Review captures: `docs/evidence/first-movement-ending.png` and `docs/evidence/fi
 | Optional visual production | Separate issue #11 / existing PR #12 | Review original blocking diagrams and asset/access register; no gameplay or canon integration |
 
 Safe to pause with source/evidence in focused PRs. Dominique owns release and canon decisions; maintainer owns reviewed publication; independent testers supply acceptance evidence. A showcase is a transparent fallback, not a claim that the tested-public-preview target passed.
+
+
+## Source follow-up — 3 November 2026
+
+This follow-up does not rewrite the October 31 observations or turn them into independent acceptance. Source inspected: main `0235ba0094347f03594b9b8c4f0d3f984f59561b`. PR #13 is merged. GitHub's Pages deployment record reports success for that SHA at 2026-10-31T09:57:18Z; the Pages configuration publishes main at the root. Direct public retrieval was blocked (proxy HTTP 403); metadata is not serving-artifact equality or device acceptance.
+
+The current public summary belongs in [the existing First Movement status section](https://ibloud.github.io/ren-rhapsody/#play-submission), linked from Break This Build's owning `Loptr-Lab/duet-solo-hackathon/duet-review.html`. No AGENTS.md or nested instruction file was found in either inspected main tree. Existing README, rights/provenance, verification and publication workflow were read. Concurrent Duet CSS PR #110 and Weaver PR #105 remain separate; this update changes no styling, gameplay or deployment configuration.
+
+| Public claim | Closest source | Limit |
+| --- | --- | --- |
+| Browser slice and recovery fixes merged | [PR #13](https://github.com/ibloud/ren-rhapsody/pull/13), main SHA above | Source merge and recorded Pages success, not live execution verification |
+| Five-fragment ending, focus, interruption, touch-emulation and synthesized-signal checks | October 31 reproduction/results above and `play/tests/browser.cjs` | Implementer automation; not independent playtesting, human listening, physical Safari, or VoiceOver |
+| Optional Quiet Beat tapping mode is review work | [Commit e471e6d](https://github.com/ibloud/ren-rhapsody/commit/e471e6db31115020660a885aefab70c32bed1347), `review/quiet-beat`, one commit ahead of main | No merged PR found; main Pages source excludes it; not verified live |
+| Quiet Beat uses local timing and optional synthesis | `play/quiet-beat.html` and `play/quiet-beat.js` at that commit | Source inspection, not accessibility acceptance |
+| Quiet Beat is Codex-assisted | Project owner's November 3 review brief identifies this implementation | Source artifact is available; individual prompts/human edits are not itemized by repository metadata |
+| Earlier concept/draft authorship | Existing blueprint and source history | No complete AI/human contribution ledger; do not infer authorship from account identity |
+| Audio and playable art | `play/game.js`, `play/style.css`, play README at inspected main | Local synthesis and procedural art; no additional rights claim for blueprint/social artwork |
+| Public sharing and artist response | Public repository and PR artifacts; existing music/participation boundary | No verified private delivery, receipt, response, invitation, or commission in inspected Rhapsody sources |
+
+Codex assisted the November 3 source tracing, status/resource drafting, and automated verification described in the paired review PRs. Human release/canon authority remains Dominique's under the existing record. No independent human playtest or artist approval is attributed.
+
+### Optional resource verification
+
+- Handshake MOVE referral supplied by the owner: https://joinhandshake.com/move-program/referral?referralCode=AB04EB&utm_source=referral . Parameters are preserved; link is labeled as a referral. Direct retrieval returned proxy HTTP 403; the web reader also could not access it. The owner describes a screenshot showing “Vibe Code an App” using Google AI Studio, but the screenshot was not available to inspect in this review. Free training, account requirements, referral benefits/conditions and current mission availability are unverified. No account, enrollment or referral action was taken.
+- Opinion AI, *Bookmark This: The Free AI Learning Path for 2026*, published May 31, 2026: https://opinionai.substack.com/p/free-ai-courses-from-anthropic-google . Web-reader access succeeded November 3 (direct shell retrieval was blocked). The guide distinguishes linked free learning material from its paid companion subscription/guides and says some resources require accounts and some certificates cost money. Individual provider offers were not audited; no blanket free-access claim is made.
+- Training is optional, independent of contributor approval or employment. No identified instruction in the inspected main trees requires suppressing a neutrally labeled, unverified referral destination; it remains subject to preview review before publication.
+
+The prior original-audio, rights, independent participation, and publication gates remain in force. Review preview and automated source checks must not be described as physical iPad Safari/VoiceOver acceptance.
+
+### November 3 local review checks
+
+The unchanged main First Movement runtime passed its existing browser regression again in Linux Chromium 154.0.8037.57 / Node 24.19.0, served at `http://127.0.0.1:8041/play/`: five fragments and ending, focused restart, interruptions, tablet touch emulation, supported/unsupported audio, and non-zero native synthesized signal. This remains automated evidence, not independent or physical-device acceptance.
+
+The updated Rhapsody page and owning hub passed local relative-link/fragment checks, navigation/keyboard focus, preserved referral-parameter checks, widths 320/390/820/1440, and an 820px enlarged-root-text check without horizontal page overflow. Both 820px captures were inspected. The hub's existing helper script referenced an absent `pixie-restore` anchor; restoring that existing control's anchor fixes the observed page error and preserves its hide/restore/Escape behavior. No stylesheet or artwork changed.
+
+The existing Duet browser-recovery and Weaver generators completed with no generated source differences. Syntax checks and all 41 existing tests passed, using already installed dependencies; the first restricted run could not complete the loopback WebSocket test, which passed when rerun with socket permission. No dependency was added. Physical iPad Safari, VoiceOver, independent playtesting, and hosted visual review remain separate pending gates at this point. The paired PR handoff identifies the final commits and preview results.
+
+## Break This Build 2027 follow-up — November 3, 2026
+
+Continue PR #14 from `96d80ca4c56e90ce0eb3ec8207841e5c1c78790a`, preserving the owner's added Halloween retrospective, rather than restarting from the earlier draft. Main remains `0235ba0`; Quiet Beat remains separate `e471e6d` review work. Paired hub PR #111 continues from `176c0b3`, with Duet main `ad55c088`. Source claims do not change the older acceptance record.
+
+One goal now links both games: start, play, recover, finish using hands-free input. Four separate MouthPad/VOX cases and ordinary-input/physical-device/VoiceOver evidence tracks are in the [existing shared test packet](https://github.com/Loptr-Lab/duet-solo-hackathon/blob/review/ren-development-record/docs/PRODUCTION_PLAYTEST.md). Physical MouthPad, VOX, iPad Safari and VoiceOver are blocked by unavailable test setups; no compatibility is claimed. Current VOX first-party material describes macOS/iOS dictation, not verified game key mappings/holds. Augmental's linked chess demonstration is motivation only.
+
+A native ordinary-pointer reproduction found that holding the direction button captures that pointer, so it cannot activate Jump at the same time. The optional, reversible click-to-move mode uses separate clicks: direction toggles, Jump, and cleared movement on pause/mode change/interruption/restart. The existing game scene, platforms and recovery rules are retained. A single mouse completed all five fragments after a missed-ledge recovery. Optional timing assist grants the beat boost without timing the input; assisted runs are labeled and excluded from the best-run record. A keyboard proxy is not VOX latency/hold evidence.
+
+Codex assisted the scoped input changes and automated checks. No human player, independent tester or physical assistive-device test is implied. The browser still uses local canvas and synthesized audio, not a model service. The existing shared stylesheet is reused, with only a visibility rule for the opt-in controls; art, optional training resources, and their verification labels are preserved. Final tested commits and preview readback belong in the paired review PR handoff.
+
+Quiet Beat at `e471e6d` was checked separately in isolated Chromium: Start, tap feedback, browser-automated tempo selection to 72 BPM and Stop passed. This is a branch-only ordinary-control proxy, not a physical MouthPad/VOX test or a merge. The final hub preview rewrites only cross-site links in its staging artifact so both reviewed game paths can be opened from the hub; canonical source destinations remain unchanged.
+
+Final local review: the existing native browser regression passes both the default route and the optional single-pointer path, including timing-assist boost, assisted-run labeling after switching assist off, and exclusion from the best-run record. Duet's existing 41 tests, syntax checks and both static generators pass; the additional browser script completes the same 34-move game by pointer and keyboard, tests held and fresh duplicate confirmation at turn handoff, and restarts. Local links/fragments and widths 320/390/820/1440 pass across hub, status and game pages; both game paths open from the assembled hub preview. Chromium is Linux automation, not physical iPad Safari or independent human evidence. Existing hub/live Duet runtime retrieval remains blocked by proxy HTTP 403.
