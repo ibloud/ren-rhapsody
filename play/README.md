@@ -49,3 +49,22 @@ Serve the repository first as above. Set `FIRST_MOVEMENT_URL` for another review
 Goal: start, play, recover and finish. **Click-to-move** is optional and off by default: click a direction to latch it, again to stop, then click Jump independently. Pause, restart, leaving the page and switching modes clear movement. **Timing assist**, also off by default, grants the beat boost without rhythm timing. Assisted runs are labeled and do not update the best-run record. Neither option maps voice input.
 
 The ordinary Linux Chromium proxy reaches the five-fragment ending and tests missed-ledge recovery. Physical MouthPad, VOX, iPad Safari and VoiceOver remain blocked/unverified. See the existing [status and evidence tracks](../index.html#hands-free-2027) and [shared test packet](https://github.com/Loptr-Lab/duet-solo-hackathon/blob/review/ren-development-record/docs/PRODUCTION_PLAYTEST.md). The existing browser regression now also covers the optional input path. Quiet Beat remains its own review branch, not part of this release candidate.
+
+
+## Play-first onboarding review
+
+Choose the game, check **Input options** beside **Start**, then make a real move and jump. The first-success message is driven by movement/jump state, not by opening help. Input options use a native dialog; Escape closes it and returns focus. Opening it during play pauses the run and clears held input; Resume is explicit. Both assists remain off by default, and the established assisted-run scoring/best-record rules are retained.
+
+**Restart run** is available while stuck. **Replay** follows the ending. **Report a finding** is reachable during play and at completion; its public GitHub draft asks for build/URL, browser/OS, input method, steps, expected and actual behavior. Opening a draft does not submit it. Gameplay requires no sign-in, training or feedback.
+
+The established audio, art, AI disclosure and four MouthPad/VOX cases remain in the project record. Ordinary pointer/keyboard walkthroughs do not establish physical MouthPad, VOX, iPad Safari or VoiceOver acceptance.
+
+## Low-vision preview review
+
+The consolidated stylesheet uses a 20px readable baseline and opaque HUD panels outside the scene. See [requirements, official references, verification boundaries and multiplayer Duet consistency checklist](../docs/LOW-VISION-REVIEW-2026-11-04.md). Run the expanded maintainer audit with externally installed browser tools:
+
+```bash
+PLAYWRIGHT_MODULE=/path/to/playwright CHROMIUM_PATH=/path/to/chromium node play/tests/readability.cjs
+```
+
+This supplements the existing gameplay regression; it does not establish physical-device, screen-reader, full AAA or Material conformance.
