@@ -58,3 +58,13 @@ Choose the game, check **Input options** beside **Start**, then make a real move
 **Restart run** is available while stuck. **Replay** follows the ending. **Report a finding** is reachable during play and at completion; its public GitHub draft asks for build/URL, browser/OS, input method, steps, expected and actual behavior. Opening a draft does not submit it. Gameplay requires no sign-in, training or feedback.
 
 The established audio, art, AI disclosure and four MouthPad/VOX cases remain in the project record. Ordinary pointer/keyboard walkthroughs do not establish physical MouthPad, VOX, iPad Safari or VoiceOver acceptance.
+
+## Low-vision preview review
+
+The consolidated stylesheet uses a 20px readable baseline and opaque HUD panels outside the scene. See [requirements, official references, verification boundaries and multiplayer Duet consistency checklist](../docs/LOW-VISION-REVIEW-2026-11-04.md). Run the expanded maintainer audit with externally installed browser tools:
+
+```bash
+PLAYWRIGHT_MODULE=/path/to/playwright CHROMIUM_PATH=/path/to/chromium node play/tests/readability.cjs
+```
+
+This supplements the existing gameplay regression; it does not establish physical-device, screen-reader, full AAA or Material conformance.
