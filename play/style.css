@@ -101,3 +101,33 @@ kbd, .touch-icon { padding: .2rem; border: 1px solid var(--outline); border-radi
 .cover-note{position:absolute;color:#ffd18a;font:18px Georgia,serif;text-shadow:0 0 12px #ffd18a}
 .n1{left:32%;top:25px}
 .n2{right:27%;top:47px}
+
+/* Project homepage shares the game's presentation authority and semantic roles. */
+:where(html.rhapsody-home) .home-bar,:where(html.rhapsody-home) .home-main,:where(html.rhapsody-home) .home-footer { max-width:1200px; margin-inline:auto; }
+:where(html.rhapsody-home) .home-bar { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--outline); }
+:where(html.rhapsody-home) .home-bar a { display:inline-flex; align-items:center; }
+:where(html.rhapsody-home) .home-hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2rem; align-items:center; padding:2rem 0; }
+:where(html.rhapsody-home) .home-hero h1 { font-size:2rem; }
+:where(html.rhapsody-home) .home-hero p { max-width:40ch; }
+:where(html.rhapsody-home) .home-hero figure { margin:0; }
+:where(html.rhapsody-home) .home-hero img { display:block; width:100%; height:auto; border:1px solid var(--outline); border-radius:.5rem; }
+:where(html.rhapsody-home) figcaption { color:var(--on-surface-supporting); margin-top:1rem; max-width:40ch; }
+:where(html.rhapsody-home) .home-hero a.primary-button { color:var(--on-primary); text-decoration:none; min-height:56px; max-width:24rem; padding:.6rem .8rem; align-items:center; border:2px solid var(--outline); border-radius:.4rem; }
+:where(html.rhapsody-home) .home-hero a.primary-button:is(:visited,:hover,:focus-visible) { color:var(--on-primary); }
+:where(html.rhapsody-home) .home-input { margin:1rem 0; border-top:1px solid var(--outline); }
+:where(html.rhapsody-home) summary { font:inherit; min-height:56px; padding:.6rem 0; color:var(--accent); cursor:pointer; }
+:where(html.rhapsody-home) .home-context { border-top:1px solid var(--outline); padding:1rem 0; }
+:where(html.rhapsody-home) .home-nav { display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0 2rem; }
+:where(html.rhapsody-home) .home-nav a { display:inline-flex; align-items:center; }
+:where(html.rhapsody-home) .home-context section { margin:2rem 0; padding:1rem 0; border-top:1px solid var(--outline); }
+:where(html.rhapsody-home) h3 { font-size:1.2rem; line-height:1.5; color:var(--on-surface); }
+:where(html.rhapsody-home) :is(.zone-grid,.platform-grid,.orientation-grid,.mission-proof) { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr)); gap:1rem; }
+:where(html.rhapsody-home) :is(.card,.platform-card,.mission-note,.rights-banner,.orientation-item) { min-width:0; padding:1rem; border:1px solid var(--outline); border-radius:.4rem; background:var(--surface); margin-bottom:2rem; }
+:where(html.rhapsody-home) :is(.card,.platform-card) p { max-width:40ch; }
+:where(html.rhapsody-home) :is(.zone-map,.hero-actions,.mission-actions) { display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0 2rem; }
+:where(html.rhapsody-home) .zone-map a { display:flex; flex-direction:column; justify-content:center; border:1px solid var(--outline); padding:.6rem; }
+:where(html.rhapsody-home) :is(.status-chip,.mission-kicker,.vibe:not(p)) { display:block; color:var(--on-surface-supporting); font-size:1rem; margin-bottom:1rem; }
+:where(html.rhapsody-home) li { margin-bottom:1rem; max-width:65ch; }
+:where(html.rhapsody-home) pre { font:inherit; white-space:pre-wrap; overflow-wrap:anywhere; }
+:where(html.rhapsody-home) .home-footer { border-top:1px solid var(--outline); padding:2rem 0; }
+@media(max-width:700px) { :where(html.rhapsody-home) .home-hero { grid-template-columns:minmax(0,1fr); padding:1rem 0; gap:1rem; } }
