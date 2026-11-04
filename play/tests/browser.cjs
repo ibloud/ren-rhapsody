@@ -29,6 +29,7 @@ const base=process.env.FIRST_MOVEMENT_URL||'http://127.0.0.1:8041/play/';
  assert.deepEqual(errors,[]);assert.ok(requests.every(u=>new URL(u).origin===new URL(base).origin),'external request found');
  await page.screenshot({path:process.env.FIRST_MOVEMENT_SCREENSHOT||'/workspace/work/ren-verified.png',fullPage:true});
  const touch=await browser.newContext({viewport:{width:820,height:900},hasTouch:true,isMobile:true});const tp=await touch.newPage();await tp.goto(base);await tp.locator('#startButton').tap();assert.equal(await tp.locator('#touchControls').isVisible(),true);
+ await tp.locator('#touchControls').scrollIntoViewIfNeeded();
  const cdp=await touch.newCDPSession(tp);const right=await tp.locator('[data-control=right]').boundingBox(),jump=await tp.locator('[data-control=jump]').boundingBox();
  const point=(b,id)=>({x:b.x+b.width/2,y:b.y+b.height/2,id});const r=point(right,1),j=point(jump,2);
  await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[r]});await tp.waitForTimeout(300);assert.ok(await tp.locator('[data-control=right]').evaluate(e=>e.classList.contains('pressed')));

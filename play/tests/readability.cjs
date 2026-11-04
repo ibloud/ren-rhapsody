@@ -8,17 +8,19 @@ for(const width of [320,390,820,1440])for(const mode of ['default','200%-text','
 await p.setViewportSize({width,height:900});await p.goto(process.env.FIRST_MOVEMENT_URL||'http://127.0.0.1:8041/play/');
 if(mode.includes('200%'))await p.addStyleTag({content:'html {font-size:250% !important}'});
 if(mode.includes('spacing'))await p.addStyleTag({content:'* {line-height:1.5 !important;letter-spacing:.12em !important;word-spacing:.16em !important} p {margin-bottom:2em !important}'});
-for(const state of ['menu','dialog','selected','hud','completion']){
+for(const state of ['menu','dialog','selected','hud','completion','record']){
 if(state==='dialog')await p.locator('#introOptions').click();
 if(state==='selected')await p.locator('#pointerMode').click();
 if(state==='hud'){await p.keyboard.press('Escape');assert.equal(await p.evaluate(()=>document.activeElement.id),'introOptions');await p.locator('#startButton').click();}
 if(state==='completion'){await p.locator('[data-control=right]').click();await p.locator('#endOverlay').waitFor({state:'visible',timeout:30000});}
+if(state==='record')await p.locator('.development-record summary').click();
+if(state==='menu'&&mode==='default'){const start=await p.locator('#startButton').boundingBox();assert(start.y+start.height<=900,JSON.stringify({width,start}));}
 const audit=await p.evaluate(()=>{
 const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number);const lum=c=>c.slice(0,3).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0);const contrast=(a,b)=>{a=lum(a);b=lum(b);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
 const nodes=[],targets=[];const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
 while(n=walk.nextNode()){const e=n.parentElement;if(!n.textContent.trim()||e.closest('[aria-hidden=true],script,style')||!e.checkVisibility())continue;const s=getComputedStyle(e);let bg=e;while(bg&&rgb(getComputedStyle(bg).backgroundColor)[3]===0)bg=bg.parentElement;
 nodes.push({text:n.textContent.trim(),size:parseFloat(s.fontSize),contrast:contrast(rgb(s.color),rgb(getComputedStyle(bg||document.body).backgroundColor)),clipped:e.scrollWidth>e.clientWidth+2&&e.clientWidth>0});}
-for(const e of document.querySelectorAll('button,a'))if(e.checkVisibility()){const r=e.getBoundingClientRect();targets.push({id:e.id||e.textContent.trim(),w:r.width,h:r.height});}
+for(const e of document.querySelectorAll('button,a,summary'))if(e.checkVisibility()){const r=e.getBoundingClientRect();targets.push({id:e.id||e.textContent.trim(),w:r.width,h:r.height});}
 return{nodes,targets,overflow:document.documentElement.scrollWidth>innerWidth,dialog:document.querySelector('dialog').open?{scroll:document.querySelector('dialog').scrollHeight,height:document.querySelector('dialog').clientHeight}:null};});
 results.push({width,mode,state,...audit});assert(!audit.overflow,JSON.stringify({width,mode,state,overflow:true}));assert(audit.nodes.every(n=>n.size>=20&&n.contrast>=7&&!n.clipped),JSON.stringify({width,mode,state,bad:audit.nodes.filter(n=>n.size<20||n.contrast<7||n.clipped)}));assert(audit.targets.every(t=>t.w>=48&&t.h>=48),JSON.stringify({width,mode,state,targets:audit.targets}));
 if(mode==='default')await p.screenshot({path:`/workspace/work/ren-${width}-${state}.png`,fullPage:true});

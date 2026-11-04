@@ -26,15 +26,15 @@ button:disabled { cursor: default; border-style: dashed; }
 button[aria-pressed="true"], button.pressed { color: var(--on-state-selected); background: var(--state-selected); border: 4px double var(--on-state-selected); }
 :focus-visible { outline: 3px solid var(--state-focus); outline-offset: 4px; }
 canvas:focus-visible { outline-offset: -5px; }
-.shell { max-width: 1440px; margin: auto; }
+.shell { max-width: 1200px; margin: auto; }
 .topbar, .top-actions, .start-actions, .game-help, .site-footer, .game-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-.topbar { padding: 1rem 0; border-bottom: 2px solid var(--outline); justify-content: space-between; }
+.topbar { padding: .5rem 0; border-bottom: 2px solid var(--outline); justify-content: space-between; }
 .wordmark { display: inline-flex; align-items: center; gap: .6rem; color: var(--on-surface); }
 .wordmark i { font-style: normal; }
 .mark { display: grid; place-items: center; min-width: 56px; min-height: 56px; border: 2px solid var(--accent); border-radius: 50%; color: var(--accent); }
 .build-tag, .eyebrow, .intro-kicker, .rights-note, .feedback-copy, .site-footer, #hint { color: var(--on-surface-supporting); }
 .showcase-note { margin-top: 1rem; }
-.game-frame { border: 2px solid var(--outline); border-radius: .6rem; background: var(--surface); }
+.game-frame { display: flex; flex-direction: column; border: 2px solid var(--outline); border-radius: .6rem; background: var(--surface); }
 .canvas-wrap { position: relative; display: flex; flex-direction: column; isolation: isolate; }
 canvas { display: block; width: 100%; height: clamp(350px, 48vw, 690px); touch-action: none; background: #101323; }
 .top-hud { order: -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding: 1rem; background: var(--surface); border-bottom: 2px solid var(--outline); }
@@ -50,13 +50,22 @@ canvas { display: block; width: 100%; height: clamp(350px, 48vw, 690px); touch-a
 .beat-pulse span:nth-child(2) { animation-delay: .07s; }
 .beat-pulse span:nth-child(3) { animation-delay: .14s; }
 @keyframes ripple { 0% { transform: scale(.42); opacity: .9; } 100% { transform: scale(1.35); opacity: 0; } }
-.overlay { order: -2; padding: 1rem; background: var(--surface); }
+.overlay { order: -2; padding: clamp(1rem, 4vw, 3rem); background: var(--surface); }
 .hidden { display: none !important; }
 .canvas-wrap:has(.overlay:not(.hidden)) > :is(canvas,.top-hud,.beat-label,.touch-controls) { display: none; }
-.intro-card, .end-card { max-width: 65ch; margin: auto; }
+.intro-card, .end-card { width: 100%; max-width: 48ch; margin: auto; }
+.intro-card { min-height: 28rem; display: flex; flex-direction: column; justify-content: center; }
+.intro-card h1 { font-size: 1.6rem; margin-bottom: .5rem; }
+.intro-tagline { color: var(--pink); font-weight: 700; }
+.top-actions { padding: 1rem; order: -1; }
+.game-frame:has(#overlay:not(.hidden)) .top-actions { order: 1; }
+.development-record { margin: 2rem 0; max-width: 65ch; }
+summary { cursor: pointer; min-height: 56px; padding: .6rem 0; color: var(--accent); }
+#firstSuccess { flex-basis: 100%; margin: 0; }
 .intro-kicker, .howto { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
 .intro-card h1 em { color: var(--pink); font-style: normal; }
-.start-actions > * { flex: 1 1 12rem; }
+.start-actions > * { flex: 0 1 auto; }
+.start-actions .primary-button { width: auto; min-inline-size: min(9rem, 100%); max-width: 100%; }
 .primary-button { display: flex; justify-content: space-between; gap: 1rem; width: 100%; background: var(--primary); color: var(--on-primary); border-color: var(--outline); font-weight: 700; }
 .primary-button:hover { background: var(--on-surface); }
 .howto > span { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
@@ -69,6 +78,8 @@ kbd, .touch-icon { padding: .2rem; border: 1px solid var(--outline); border-radi
 .touch-controls button { min-width: 64px; min-height: 64px; touch-action: none; user-select: none; }
 .jump-control { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .single-pointer .touch-controls { display: flex; }
+.game-help { order: 2; }
+.game-footer { order: 3; }
 .game-help, .game-footer { padding: 1rem; border-top: 2px solid var(--outline); }
 .footer-left { display: flex; align-items: baseline; gap: .5rem; max-width: 60ch; }
 .below-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,22rem),1fr)); gap: 2rem; padding: 2rem 0; }
