@@ -26,7 +26,6 @@
   let player, found, checkpoint=50, checkpointY=416, beatPhase=0, lastBeat=-1, best=0;
   try{ best=Number(localStorage.getItem('ren-first-movement-best')||0); }catch(_){}
   ui.best.textContent=best?String(best).padStart(2,'0'):'—';
-
   function resize(){
     const r=canvas.getBoundingClientRect(); if(!r.width||!r.height)return;
     dpr=Math.min(window.devicePixelRatio||1,2);scale=r.height/506;width=r.width/scale;height=r.height/scale;
