@@ -12,3 +12,45 @@ canvas:focus-visible{outline-offset:-4px}
 
 /* Opt-in single-pointer controls reuse the existing control layout. */
 .single-pointer .touch-controls{display:flex}
+
+/* Ren Rhapsody brand system: Material 3-inspired surfaces, tonal actions, and focus states. */
+:root{
+  --surface:#0b0d16;
+  --surface-container:#141725;
+  --surface-container-high:#1c2030;
+  --surface-variant:#25293a;
+  --on-surface:#f5f3fb;
+  --on-surface-variant:#c4c5d0;
+  --primary:#8cefe4;
+  --on-primary:#003733;
+  --secondary:#d9bce8;
+  --outline:#8f909c;
+  --shape-xl:28px;
+  --shape-lg:20px;
+  --shape-md:14px;
+}
+body{background:radial-gradient(900px 420px at 50% -8%,#262344 0%,#111422 52%,var(--surface) 100%);color:var(--on-surface)}
+.topbar{height:80px;border-bottom-color:color-mix(in srgb,var(--outline) 24%,transparent)}
+.mark{width:34px;height:34px;border-radius:12px;background:var(--surface-container);border-color:color-mix(in srgb,var(--primary) 55%,transparent);box-shadow:none}
+.wordmark{letter-spacing:.12em}
+.icon-button{min-height:40px;border-radius:999px;background:var(--surface-container);border:1px solid color-mix(in srgb,var(--outline) 34%,transparent);color:var(--primary);padding:0 16px;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.icon-button:hover{background:var(--surface-container-high);border-color:var(--primary);transform:translateY(-1px)}
+.showcase-note{max-width:900px;color:var(--on-surface-variant)}
+.showcase-note a{color:var(--primary);text-underline-offset:3px}
+.game-frame{border-radius:var(--shape-xl);border-color:color-mix(in srgb,var(--outline) 36%,transparent);background:var(--surface-container);box-shadow:0 24px 80px #0009}
+.canvas-wrap{background:var(--surface)}
+.overlay{background:linear-gradient(180deg,#090b16aa,#090b16dd)}
+.intro-card,.end-card{border-radius:var(--shape-xl);background:color-mix(in srgb,var(--surface-container) 96%,transparent);border-color:color-mix(in srgb,var(--outline) 30%,transparent);box-shadow:0 18px 60px #0008}
+.intro-kicker,.eyebrow,.build-tag,.game-footer,.site-footer{letter-spacing:.12em}
+.intro-card h1,.end-card h2{letter-spacing:-.045em}
+.primary-button{min-height:56px;border-radius:999px;background:var(--primary);color:var(--on-primary);box-shadow:none;transition:filter .2s ease,transform .2s ease}
+.primary-button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.secondary-button{min-height:48px;border-radius:999px;background:transparent;border:1px solid var(--outline);color:var(--on-surface);transition:background .2s ease,border-color .2s ease}
+.secondary-button:hover{background:var(--surface-variant);border-color:var(--on-surface)}
+.howto{border-top-color:color-mix(in srgb,var(--outline) 28%,transparent);border-bottom-color:color-mix(in srgb,var(--outline) 28%,transparent)}
+kbd,.touch-icon{border-radius:8px;background:var(--surface-variant);border-color:color-mix(in srgb,var(--outline) 35%,transparent)}
+.below-grid article{border-top-color:color-mix(in srgb,var(--outline) 32%,transparent)}
+.below-grid h2{letter-spacing:-.025em}
+.touch-controls button{border-radius:20px;background:color-mix(in srgb,var(--surface-container-high) 92%,transparent);border-color:color-mix(in srgb,var(--primary) 40%,transparent);color:var(--primary);box-shadow:none}
+.touch-controls button:active{background:var(--primary);color:var(--on-primary)}
+@media(max-width:760px){.topbar{height:68px}.icon-button{min-height:38px;padding:0 13px}.game-frame{border-radius:var(--shape-lg)}}
