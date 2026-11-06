@@ -6,7 +6,7 @@
 /* Focus and recovery additions preserve the existing scene and visual direction. */
 button:focus-visible,a:focus-visible,canvas:focus-visible{outline:3px solid #ffd18a;outline-offset:3px}
 canvas:focus-visible{outline-offset:-4px}
-.showcase-note{color:#dce1ef;font-size:14px;line-height:1.5;margin:12px 0}
+.showcase-note{color:#f0f1f7;font-size:18px;line-height:1.65;letter-spacing:.01em;margin:16px 0;max-width:92ch}.showcase-note p{margin:0 0 14px}.showcase-note button{font-size:15px;min-height:48px;padding:11px 16px}.showcase-note #inputHelp{font-size:18px;color:#eef0f7;max-width:92ch}.evidence-link{margin:18px 0 24px;font-size:18px;line-height:1.6}.evidence-link a{color:#9ff7ee;text-decoration-thickness:2px;text-underline-offset:4px}.evidence-link a:visited{color:#dcb9eb}
 @media(pointer:coarse){.touch-controls{display:flex}}
 @media(max-width:480px){.build-tag{display:none}.top-actions{gap:5px}.wordmark{gap:5px}}
 
@@ -35,8 +35,8 @@ body{background:radial-gradient(900px 420px at 50% -8%,#262344 0%,#111422 52%,va
 .wordmark{letter-spacing:.12em}
 .icon-button{min-height:40px;border-radius:999px;background:var(--surface-container);border:1px solid color-mix(in srgb,var(--outline) 34%,transparent);color:var(--primary);padding:0 16px;transition:background .2s ease,border-color .2s ease,transform .2s ease}
 .icon-button:hover{background:var(--surface-container-high);border-color:var(--primary);transform:translateY(-1px)}
-.showcase-note{max-width:900px;color:var(--on-surface-variant)}
-.showcase-note a{color:var(--primary);text-underline-offset:3px}
+.showcase-note{max-width:900px;color:#f0f1f7;font-size:18px;line-height:1.65;letter-spacing:.01em}
+.showcase-note a{color:var(--primary);text-underline-offset:4px;text-decoration-thickness:2px}
 .game-frame{border-radius:var(--shape-xl);border-color:color-mix(in srgb,var(--outline) 36%,transparent);background:var(--surface-container);box-shadow:0 24px 80px #0009}
 .canvas-wrap{background:var(--surface)}
 .overlay{background:linear-gradient(180deg,#090b16aa,#090b16dd)}
